@@ -71,6 +71,20 @@
     }
   }
 
+  @include when(disabled){
+    .#{$namespace}-input__wrapper{
+      color: getCssVar('text', 'color', 'disabled');
+      background-color: getCssVar('input', 'disabled', 'fill');
+      &:hover {
+        box-shadow: 0 0 0 1px getCssVar('border', 'color', 'light') inset;
+      }
+  
+      .#{$namespace}-input__inner{
+          cursor: not-allowed;
+        }
+    }
+  }
+
   @include e(wrapper) {
     cursor: text;
     width: 100%;
