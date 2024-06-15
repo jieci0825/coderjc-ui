@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { Loading3QuartersOutlined } from '@vicons/antd'
 import { CIcon } from '@coderjc-ui/components'
 import { createNamespace } from '@coderjc-ui/utils'
 import { buttonProps, buttonEmits } from './button'
+import { inject } from 'vue'
+import { ButtonGroupKey } from './constant'
 
 defineOptions({ name: 'c-button' })
 
@@ -11,10 +13,19 @@ const bem = createNamespace('button')
 const props = defineProps(buttonProps)
 const emits = defineEmits(buttonEmits)
 
+const buttonGroupInject = inject(ButtonGroupKey, undefined)
+
+watch(
+  () => buttonGroupInject?.type,
+  val => {
+    console.log(val)
+  }
+)
+
 const buttonCls = computed(() => [
   bem.b(),
-  bem.m(props.type),
-  bem.m(props.size),
+  bem.m(buttonGroupInject?.type || props.type),
+  bem.m(buttonGroupInject?.size || props.size),
   bem.is('disabled', props.disabled),
   bem.is('loading', props.loading),
   bem.is('plain', props.plain),

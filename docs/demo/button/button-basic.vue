@@ -7,9 +7,9 @@ import { Alarm } from '@vicons/ionicons5'
     <c-button>Default</c-button>
     <c-button type="primary">Primary</c-button>
     <c-button type="success">Success</c-button>
-    <c-button type="info">Info</c-button>
     <c-button type="warning">Warning</c-button>
     <c-button type="danger">Danger</c-button>
+    <c-button type="info">Info</c-button>
   </div>
 
   <div class="show-row">

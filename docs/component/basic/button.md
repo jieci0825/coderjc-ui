@@ -20,6 +20,10 @@
 
 <preview path="../../demo/button/button-icon.vue"></preview>
 
+## 按钮组
+当你多项操作所属一类时，那么使用按钮组可能会有更好的效果
+<preview path="../../demo/button/button-group.vue"></preview> 
+
 ## 加载状态按钮
 
 使用 `loading` 的属性为 `true` 或 `false` 来控制按钮的加载状态，`loading-text` 可以附加一些文本说明
@@ -62,3 +66,17 @@
 | ------- | -------------- |
 | default | 自定义默认内容 |
 | icon    | 自定义图标组件 |
+
+## ButtonGroup API
+
+### ButtonGroup 属性
+| 属性名         | 说明                                         | 类型                                                         | 默认值   |
+| :------------- | -------------------------------------------- | ------------------------------------------------------------ | -------- |
+| type           | 类型                                         | `'' / 'primary' / 'success' / 'warning' / 'danger' / 'info'` | --       |
+| size           | 尺寸                                         | `'large' / 'default' / 'small'`                              | --       |
+
+### ButtonGroup 插槽
+
+| 插槽名  | 说明           |
+| ------- | -------------- |
+| default | 自定义默认内容 |
