@@ -1,0 +1,8 @@
+packages:
+  # 存放组件测试的时候的代码
+  - 'examples'
+  # 存放组件的文档
+  - 'docs'
+  # 存放组件的代码，匹配 packages 下的所有子目录，表示 packages 下的每个子目录都会被视为一个独立的包
+  - 'packages/*'
+  - 'internal/*'

@@ -1,0 +1,19 @@
+{
+  "name": "docs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.md",
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.2.3",
+    "vitepress": "1.0.1"
+  }
+}

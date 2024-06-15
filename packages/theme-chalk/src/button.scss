@@ -1,0 +1,314 @@
+@use './mixins/mixins.scss' as *;
+@use './mixins/function.scss' as *;
+
+@include b(button) {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 15px;
+  overflow: hidden;
+  transition: getCssVar('transition', 'base');
+  height: getCssVar('height', 'base');
+  border: getCssVar('border');
+  border-radius: getCssVar('border', 'radius', 'base');
+  font-size: getCssVar('font', 'size', 'base');
+  font-weight: getCssVar('font', 'weight', 'primary');
+  color: getCssVar('color', 'primary');
+  border-color: getCssVar('color', 'primary', 'light', '7');
+  background-color: getCssVar('color', 'primary', 'light', '9');
+
+  & > span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  // c-button is-loading
+  @include when(loading) {
+    .c-button__wrap--loading {
+      position: absolute;
+      inset: 0;
+      background-color: inherit;
+      color: inherit;
+      opacity: 0.9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  // c-button is-plain
+  @include when(plain) {
+    background-color: getCssVar('bg', 'default');
+    color: getCssVar('text', 'color', 'regular');
+    border-color: getCssVar('border', 'color');
+
+    &:hover {
+      color: getCssVar('color', 'primary');
+      border-color: getCssVar('color', 'primary');
+      background-color: getCssVar('color', 'primary', 'light', '9');
+    }
+
+    // c-button is-plain is-disabled
+    @include when(disabled) {
+      color: getCssVar('text', 'color', 'disabled');
+      border-color: getCssVar('border', 'color', 'light');
+      background-color: getCssVar('bg', 'default');
+    }
+  }
+
+  // c-button is-round
+  @include when(round) {
+    border-radius: getCssVar('border', 'radius', 'round');
+  }
+
+  // c-button is-circle
+  @include when(circle) {
+    width: getCssVar('height', 'base');
+    height: getCssVar('height', 'base');
+    font-size: calc(getCssVar('height', 'base') / 2);
+    border-radius: 50%;
+  }
+
+  // c-button is-disabled
+  @include when(disabled) {
+    &,
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+      background-image: none;
+      color: getCssVar('text', 'color', 'disabled');
+      border-color: getCssVar('border', 'color', 'light');
+      background-color: getCssVar('bg', 'default');
+    }
+  }
+
+  // type--primary
+  @include m(primary) {
+    color: getCssVar('text', 'color', 'white');
+    border-color: getCssVar('color', 'primary');
+    background-color: getCssVar('color', 'primary');
+
+    &:hover {
+      background-color: getCssVar('color', 'primary', 'light', '3');
+    }
+
+    // type--primary is-disabled
+    @include when(disabled) {
+      &,
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'primary', 'light', '5');
+        background-color: getCssVar('color', 'primary', 'light', '5');
+      }
+    }
+
+    // type--primary is-plain
+    @include when(plain) {
+      color: getCssVar('color', 'primary');
+      border-color: getCssVar('color', 'primary', 'light', '5');
+      background-color: getCssVar('color', 'primary', 'light', '9');
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'primary');
+        background-color: getCssVar('color', 'primary');
+      }
+
+      // type--primary is-plain is-disabled
+      @include when(disabled) {
+        color: getCssVar('color', 'primary', 'light', '5');
+        border-color: getCssVar('color', 'primary', 'light', '8');
+        background-color: getCssVar('color', 'primary', 'light', '9');
+      }
+    }
+  }
+  // type--success
+  @include m(success) {
+    color: getCssVar('text', 'color', 'white');
+    border-color: getCssVar('color', 'success');
+    background-color: getCssVar('color', 'success');
+
+    &:hover {
+      background-color: getCssVar('color', 'success', 'light', '3');
+    }
+
+    // type--success is-disabled
+    @include when(disabled) {
+      &,
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'success', 'light', '5');
+        background-color: getCssVar('color', 'success', 'light', '5');
+      }
+    }
+
+    // type--success is-plain
+    @include when(plain) {
+      color: getCssVar('color', 'success');
+      border-color: getCssVar('color', 'success', 'light', '5');
+      background-color: getCssVar('color', 'success', 'light', '9');
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'success');
+        background-color: getCssVar('color', 'success');
+      }
+
+      // type--success is-plain is-disabled
+      @include when(disabled) {
+        color: getCssVar('color', 'success', 'light', '5');
+        border-color: getCssVar('color', 'success', 'light', '8');
+        background-color: getCssVar('color', 'success', 'light', '9');
+      }
+    }
+  }
+  // type--warning
+  @include m(warning) {
+    color: getCssVar('text', 'color', 'white');
+    border-color: getCssVar('color', 'warning');
+    background-color: getCssVar('color', 'warning');
+
+    &:hover {
+      background-color: getCssVar('color', 'warning', 'light', '3');
+    }
+
+    // type--warning is-disabled
+    @include when(disabled) {
+      &,
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'warning', 'light', '5');
+        background-color: getCssVar('color', 'warning', 'light', '5');
+      }
+    }
+
+    // type--warning is-plain
+    @include when(plain) {
+      color: getCssVar('color', 'warning');
+      border-color: getCssVar('color', 'warning', 'light', '5');
+      background-color: getCssVar('color', 'warning', 'light', '9');
+
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'warning');
+        background-color: getCssVar('color', 'warning');
+      }
+
+      // type--warning is-plain is-disabled
+      @include when(disabled) {
+        color: getCssVar('color', 'warning', 'light', '5');
+        border-color: getCssVar('color', 'warning', 'light', '8');
+        background-color: getCssVar('color', 'warning', 'light', '9');
+      }
+    }
+  }
+  // type--danger
+  @include m(danger) {
+    color: getCssVar('text', 'color', 'white');
+    border-color: getCssVar('color', 'danger');
+    background-color: getCssVar('color', 'danger');
+
+    &:hover {
+      background-color: getCssVar('color', 'danger', 'light', '3');
+    }
+
+    // type--danger is-disabled
+    @include when(disabled) {
+      &,
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'danger', 'light', '5');
+        background-color: getCssVar('color', 'danger', 'light', '5');
+      }
+    }
+
+    // type--danger is-plain
+    @include when(plain) {
+      color: getCssVar('color', 'danger');
+      border-color: getCssVar('color', 'danger', 'light', '5');
+      background-color: getCssVar('color', 'danger', 'light', '9');
+
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'danger');
+        background-color: getCssVar('color', 'danger');
+      }
+
+      // type--danger is-plain is-disabled
+      @include when(disabled) {
+        color: getCssVar('color', 'danger', 'light', '5');
+        border-color: getCssVar('color', 'danger', 'light', '8');
+        background-color: getCssVar('color', 'danger', 'light', '9');
+      }
+    }
+  }
+  // type-info
+  @include m(info) {
+    color: getCssVar('text', 'color', 'white');
+    border-color: getCssVar('color', 'info');
+    background-color: getCssVar('color', 'info');
+
+    &:hover {
+      background-color: getCssVar('color', 'info', 'light', '3');
+    }
+
+    // type--info is-disabled
+    @include when(disabled) {
+      &,
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'info', 'light', '5');
+        background-color: getCssVar('color', 'info', 'light', '5');
+      }
+    }
+
+    // type--info is-plain
+    @include when(plain) {
+      color: getCssVar('color', 'info');
+      border-color: getCssVar('color', 'info', 'light', '5');
+      background-color: getCssVar('color', 'info', 'light', '9');
+
+      &:hover {
+        color: getCssVar('text', 'color', 'white');
+        border-color: getCssVar('color', 'info');
+        background-color: getCssVar('color', 'info');
+      }
+
+      // type--info is-plain is-disabled
+      @include when(disabled) {
+        color: getCssVar('color', 'info', 'light', '5');
+        border-color: getCssVar('color', 'info', 'light', '8');
+        background-color: getCssVar('color', 'info', 'light', '9');
+      }
+    }
+  }
+
+  // size
+  @include m(large) {
+    padding: 12px 19px;
+    height: getCssVar('height', 'large');
+    font-size: getCssVar('font', 'size', 'large');
+
+    @include when(circle) {
+      width: getCssVar('height', 'large');
+      height: getCssVar('height', 'large');
+      font-size: calc(getCssVar('height', 'large') / 2);
+      border-radius: 50%;
+    }
+  }
+  @include m(small) {
+    padding: 0 11px;
+    height: getCssVar('height', 'small');
+    font-size: getCssVar('font', 'size', 'small');
+
+    @include when(circle) {
+      width: getCssVar('height', 'small');
+      height: getCssVar('height', 'small');
+      font-size: calc(getCssVar('height', 'small') / 2);
+      border-radius: 50%;
+    }
+  }
+}

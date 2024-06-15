@@ -1,0 +1,85 @@
+:root {
+  --vp-c-brand-1: var(--c-color-primary);
+  --vp-c-brand-2: var(--vp-c-brand-1);
+  --vp-c-brand-3: var(--vp-c-brand-1);
+
+  /* code block */
+  --vp-code-block-bg: #011627;
+  --vp-code-line-number-color: #4b6479;
+  --vp-code-block-divider-color: #4b6479;
+}
+
+.dark {
+  --vp-c-neutral: var(--vp-c-white);
+  --vp-c-neutral-inverse: var(--vp-c-black);
+
+  --vp-c-text-1: rgba(255, 255, 245, 0.86);
+  --vp-c-text-2: rgba(235, 235, 245, 0.6);
+  --vp-c-text-3: rgba(235, 235, 245, 0.38);
+
+  --vp-c-neutral: var(--vp-c-white);
+  --vp-c-neutral-inverse: var(--vp-c-black);
+
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-elv: #202127;
+  --vp-c-bg-soft: #202127;
+}
+
+.vp-doc [class*='language-'] pre {
+  background-color: #292d3e;
+  font-family: 'JetBrains Mono', 'SourceHanSansSC-Bold', 'Consolas', 'Courier New', 'monospace';
+}
+
+.vitepress-demo-preview__element-plus__container>.vitepress-demo-preview-preview {
+  padding: 20px;
+}
+
+
+html.dark .vp-doc [class*='language-'] pre {
+  background-color: #282c34;
+}
+
+html.dark {
+  --vp-c-brand-1: #37a6a6;
+}
+
+
+.show-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.show-row:last-child {
+  margin-bottom: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: "阿里妈妈东方大楷 Regular";
+  font-weight: 400;
+  src: url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/fGcoStZCNQ3J.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/gGIHiEydb27C.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "阿里妈妈刀隶体 Regular";
+  font-weight: 400;
+  src: url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/JQ5fYsl8egUD.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/veSxxguCg4JX.woff") format("woff");
+  font-display: swap;
+}
+
+
+.wrapper>.container>.title a span {
+  font-family: "阿里妈妈东方大楷 Regular";
+  color: var(--vp-c-brand-1);
+  font-size: 22px;
+}

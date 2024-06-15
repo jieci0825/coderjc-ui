@@ -1,0 +1,100 @@
+@use './mixins/mixins.scss' as *;
+@use './mixins/function.scss' as *;
+
+@include b(form-item) {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: getCssVar('font', 'size', 'base');
+  color: getCssVar('text', 'color', 'secondary');
+  height: getCssVar('height', 'base');
+  line-height: getCssVar('height', 'base');
+  transition: getCssVar('transition', 'base');
+
+  &--large {
+    height: getCssVar('height', 'large');
+    line-height: getCssVar('height', 'large');
+  }
+
+  &--small {
+    height: getCssVar('height', 'small');
+    line-height: getCssVar('height', 'small');
+  }
+
+  .#{$namespace}-button {
+    margin-left: 20px;
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+
+  @include e(label-wrap) {
+    width: 80px;
+    display: flex;
+    margin-left: 10px;
+    height: 100%;
+    line-height: inherit;
+  }
+
+  @include e(label) {
+    position: relative;
+    width: auto;
+    height: 100%;
+    padding-right: 10px;
+  }
+
+  @include e(content) {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  @include e(error) {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding-top: 3px;
+    line-height: 1;
+    font-size: getCssVar('font', 'size', 'extra', 'small');
+    color: getCssVar('color', 'danger');
+  }
+
+  @include when(required) {
+    .#{$namespace}-form-item__label-wrap {
+      .#{$namespace}-form-item__label {
+        padding-right: 10px;
+        &::before {
+          content: '*';
+          position: absolute;
+          left: -10px;
+          height: 100%;
+          color: getCssVar('color', 'danger');
+        }
+      }
+    }
+  }
+
+  @include when(top) {
+    flex-direction: column;
+    .#{$namespace}-form-item__label-wrap {
+      height: 22px;
+      margin-left: 0;
+      margin-bottom: 5px;
+
+      .#{$namespace}-form-item__label {
+        line-height: 2;
+        padding-right: 0;
+        &::before {
+          left: 100%;
+        }
+      }
+    }
+  }
+
+  @include when(error) {
+    .c-input__wrapper {
+      box-shadow: 0 0 0 1px getCssVar('color', 'danger') inset;
+    }
+  }
+}

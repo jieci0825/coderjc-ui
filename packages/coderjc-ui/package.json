@@ -1,0 +1,70 @@
+{
+  "name": "coderjc-ui",
+  "version": "0.1.2",
+  "description": "一个基于 Vue3 的 UI 组件库",
+  "main": "./dist/umd/index.umd.cjs",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/coderjc-ui/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "jc-ui",
+    "coderjc",
+    "ui",
+    "vue"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm run build:lib && pnpm run move:es-style",
+    "build:lib": "run-p build:es build:umd",
+    "build:es": "vite build --config vite.es.config.ts",
+    "build:umd": "vite build --config vite.umd.config.ts",
+    "move:es-style": "move-file dist/es/index.css dist/index.css",
+    "move:ts": "move-file dist/types/coderjc-ui/index.d.ts dist/types/index.d.ts"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.umd.cjs",
+      "types": "./dist/types/coderjc-ui/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+  "author": "coderjc <coderjc@qq.com>",
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ],
+  "peerDependencies": {
+    "vue": "^3.4.21"
+  },
+  "dependencies": {
+    "@vicons/antd": "^0.12.0",
+    "@vicons/ionicons5": "^0.12.0",
+    "async-validator": "^4.2.5",
+    "dayjs": "^1.11.11",
+    "lodash-unified": "^1.0.3"
+  },
+  "sideEffects": [
+    "dist/*",
+    "dist/index.css",
+    "theme-chalk/**/*.css",
+    "theme-chalk/src/**/*.scss"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.13.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "move-file-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "vite-plugin-dts": "^3.9.1",
+    "vue": "^3.4.21",
+    "vue-loader": "^17.4.2"
+  }
+}

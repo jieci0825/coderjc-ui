@@ -1,0 +1,112 @@
+@use '../mixins/_var.scss' as *;
+@use '../mixins/function.scss' as *;
+
+// theme
+:root {
+  @include set-css-var();
+  // TODO: 其他配色后续需要完善为统一的规范
+  @include set-other-css-var(
+    getOtherCssVar('input', 'disabled', 'fill'),
+    #f2f6fc
+  );
+  @include set-other-css-var(
+    getOtherCssVar('input', 'disabled', 'border-color'),
+    #dcdfe6
+  );
+
+  // background-color
+  @include set-other-css-var(getOtherCssVar('bg', 'default'), #fff);
+  @include set-other-css-var(getOtherCssVar('bg', 'light'), #f5f7fa);
+  @include set-other-css-var(getOtherCssVar('bg', 'light', '1'), blue);
+
+  // transition
+  @include set-other-css-var(
+    getOtherCssVar('transition', 'base'),
+    all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
+  );
+
+  // height
+  @include set-other-css-var(getOtherCssVar('height', 'small'), 28px);
+  @include set-other-css-var(getOtherCssVar('height', 'base'), 32px);
+  @include set-other-css-var(getOtherCssVar('height', 'large'), 38px);
+
+  // text-color
+  @include set-other-css-var(getOtherCssVar('text', 'color', 'white'), white);
+  @include set-other-css-var(
+    getOtherCssVar('text', 'color', 'primary'),
+    #22262f
+  );
+  @include set-other-css-var(
+    getOtherCssVar('text', 'color', 'regular'),
+    #394253
+  );
+  @include set-other-css-var(
+    getOtherCssVar('text', 'color', 'secondary'),
+    #505e79
+  );
+  @include set-other-css-var(
+    getOtherCssVar('text', 'color', 'placeholder'),
+    #657692
+  );
+  @include set-other-css-var(
+    getOtherCssVar('text', 'color', 'disabled'),
+    #afb8ca
+  );
+
+  // font-size
+  @include set-other-css-var(
+    getOtherCssVar('font', 'size', 'extra-large'),
+    20px
+  );
+  @include set-other-css-var(getOtherCssVar('font', 'size', 'large'), 18px);
+  @include set-other-css-var(getOtherCssVar('font', 'size', 'medium'), 16px);
+  @include set-other-css-var(getOtherCssVar('font', 'size', 'base'), 14px);
+  @include set-other-css-var(getOtherCssVar('font', 'size', 'small'), 13px);
+  @include set-other-css-var(
+    getOtherCssVar('font', 'size', 'extra', 'small'),
+    12px
+  );
+
+  // font-weight
+  @include set-other-css-var(getOtherCssVar('font', 'weight', 'primary'), 500);
+
+  // border
+  @include set-other-css-var(getOtherCssVar('border', 'width'), 1px);
+  @include set-other-css-var(getOtherCssVar('border', 'style'), solid);
+  @include set-other-css-var(
+    getOtherCssVar('border'),
+    (getCssVar('border', 'width') getCssVar('border', 'style'))
+  );
+  @include set-other-css-var(
+    getOtherCssVar('border', 'base'),
+    (
+      getCssVar('border', 'width') getCssVar('border', 'style')
+        getCssVar('border', 'color', 'light')
+    )
+  );
+
+  // border-radius
+  @include set-other-css-var(getOtherCssVar('border', 'radius', 'base'), 3px);
+  @include set-other-css-var(getOtherCssVar('border', 'radius', 'small'), 2px);
+  @include set-other-css-var(getOtherCssVar('border', 'radius', 'middle'), 8px);
+  @include set-other-css-var(getOtherCssVar('border', 'radius', 'round'), 20px);
+
+  // border-color
+  @include set-other-css-var(getOtherCssVar('border', 'color'), #b1bdc8);
+  @include set-other-css-var(
+    getOtherCssVar('border', 'color', 'light'),
+    #dcdfe6
+  );
+  @include set-other-css-var(
+    getOtherCssVar('border', 'color', 'lighter'),
+    #ebeef5
+  );
+  @include set-other-css-var(
+    getOtherCssVar('border', 'color', 'extra', 'light'),
+    #f2f6fc
+  );
+  @include set-other-css-var(
+    getOtherCssVar('border', 'color', 'hover'),
+    getCssVar('text', 'color', 'disabled')
+  );
+}

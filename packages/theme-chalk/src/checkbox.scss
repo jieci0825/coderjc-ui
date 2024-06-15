@@ -1,0 +1,99 @@
+@use './mixins/mixins.scss' as *;
+@use './mixins/function.scss' as *;
+
+@include b(checkbox-group) {
+  font-size: 0;
+  line-height: 0; // 消除默认的行间距
+}
+
+@include b(checkbox) {
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 20px;
+  font-size: getCssVar('font', 'size', 'base');
+
+  @include e(inner) {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #999;
+    border-radius: 2px;
+    transition: getCssVar('transition', 'base');
+    &:hover {
+      border-color: getCssVar('color', 'primary');
+    }
+  }
+
+  @include e(input) {
+    display: inline-flex;
+    align-items: center;
+    @include when(checked) {
+      .c-checkbox__inner {
+        background-color: getCssVar('color', 'primary');
+        border-color: getCssVar('color', 'primary');
+        &::before {
+          content: '';
+          position: absolute;
+          width: 25%;
+          height: 50%;
+          border-right: 2px solid getCssVar('bg', 'default');
+          border-bottom: 2px solid getCssVar('bg', 'default');
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -70%) rotate(45deg);
+        }
+      }
+    }
+    @include when(indeterminate) {
+      .c-checkbox__inner {
+        background-color: getCssVar('color', 'primary');
+        border-color: getCssVar('color', 'primary');
+        &::before {
+          content: '';
+          position: absolute;
+          width: 70%;
+          height: 1.5px;
+          background-color: getCssVar('bg', 'default');
+          border-radius: getCssVar('border', 'radius', 'small');
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -70%);
+        }
+      }
+    }
+    @include when(disabled) {
+      cursor: not-allowed;
+
+      .c-checkbox__inner {
+        background-color: getCssVar('input', 'disabled', 'fill');
+        border-color: getCssVar('input', 'disabled', 'border-color');
+      }
+
+      @include when(indeterminate) {
+        .c-checkbox__inner::before {
+          background-color: getCssVar('input', 'disabled', 'border-color');
+        }
+      }
+
+      @include when(checked) {
+        .c-checkbox__inner::before {
+          border-color: getCssVar('input', 'disabled', 'border-color');
+        }
+      }
+    }
+  }
+
+  @include e(original) {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  @include e(label) {
+    margin-left: 5px;
+  }
+}

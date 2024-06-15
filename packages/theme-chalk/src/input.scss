@@ -1,0 +1,178 @@
+@use './mixins/mixins.scss' as *;
+@use './mixins/function.scss' as *;
+
+@include b(input) {
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  height: getCssVar('height', 'base');
+  font-size: getCssVar('font', 'size', 'base');
+
+  .#{$namespace}-input-group__append,
+  .#{$namespace}-input-group__prepend {
+    height: inherit;
+    display: inline-flex;
+    align-items: center;
+    color: getCssVar('text', 'color', 'disabled');
+    background-color: getCssVar('bg', 'light');
+    border: getCssVar('border', 'base');
+  }
+
+  .#{$namespace}-input-group__append {
+    border-left: none;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+
+  .#{$namespace}-input-group__prepend {
+    border-right: none;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+  }
+
+  @include when(large) {
+    height: getCssVar('height', 'large');
+  }
+
+  @include when(small) {
+    height: getCssVar('height', 'small');
+  }
+
+  @include when(group) {
+    border-radius: getCssVar('border', 'radius', 'base');
+
+    .#{$namespace}-input__wrapper {
+      border-radius: 0;
+    }
+
+    // .c-input-group.c-input-group-prepend.c-iunput-group-append
+    @include when(group-prepend) {
+      @include when(group-append) {
+        .#{$namespace}-input__wrapper {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  @include when(group-append) {
+    .#{$namespace}-input__wrapper {
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+  }
+
+  @include when(group-prepend) {
+    .#{$namespace}-input__wrapper {
+      border-top-right-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  }
+
+  @include e(wrapper) {
+    cursor: text;
+    width: 100%;
+    height: inherit;
+    padding: 0 10px;
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-image: none;
+    vertical-align: middle;
+    color: getCssVar('text', 'color', 'regular');
+    box-shadow: 0 0 0 1px getCssVar('border', 'color', 'light') inset;
+    background-color: getCssVar('bg', 'default');
+    border-radius: getCssVar('border', 'radius', 'base');
+    transition: box-shadow 0.3s linear;
+
+    .#{$namespace}-input__prefix,
+    .#{$namespace}-input__suffix,
+    .#{$namespace}-input-interior__suffix {
+      flex-shrink: 0;
+      color: getCssVar('text', 'color', 'disabled');
+      display: flex;
+      align-items: center;
+    }
+
+    .#{$namespace}-input-interior__suffix {
+      margin-left: 5px;
+      .#{$namespace}-input__count {
+        display: inline-flex;
+        font-size: getCssVar('font', 'size', 'extra-small');
+      }
+    }
+
+    .#{$namespace}-input__prefix {
+      padding-right: 5px;
+    }
+
+    .#{$namespace}-input__suffix {
+      padding-left: 5px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 1px getCssVar('border', 'color') inset;
+    }
+
+    @include when(focus) {
+      box-shadow: 0 0 0 1px getCssVar('color', 'primary') inset;
+    }
+  }
+
+  @include e(inner) {
+    cursor: text;
+    width: 100%;
+    flex-grow: 1;
+    height: inherit;
+    line-height: 1;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: inherit;
+    color: inherit;
+    vertical-align: middle;
+    div {
+      display: none;
+    }
+    &::placeholder {
+      color: getCssVar('text', 'color', 'disabled');
+    }
+  }
+}
+
+@include b(textarea) {
+  width: 100%;
+  position: relative;
+
+  .#{$namespace}-input__count {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: getCssVar('font', 'size', 'extra', 'small');
+    color: getCssVar('text', 'color', 'disabled');
+    background-color: getCssVar('bg', 'default');
+  }
+
+  textarea {
+    @include scroll-bar;
+    width: 100%;
+    height: 100%;
+    resize: vertical;
+    padding: 8px 10px;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: getCssVar('font', 'size', 'base');
+    line-height: 1.5;
+    color: getCssVar('text', 'color', 'regular');
+    background-color: getCssVar('bg', 'default');
+    border-radius: getCssVar('border', 'radius', 'base');
+    border: getCssVar('border', 'base');
+    &::placeholder {
+      color: getCssVar('text', 'color', 'disabled');
+    }
+  }
+}

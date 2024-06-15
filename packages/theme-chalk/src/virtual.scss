@@ -1,0 +1,17 @@
+@use './mixins/mixins.scss' as *;
+
+@include b(virtual) {
+  width: 100%;
+  overflow: hidden auto;
+  position: relative;
+  @include em('scroll', 'list') {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: beige;
+  }
+  @include em('scroll', 'bar') {
+  }
+}

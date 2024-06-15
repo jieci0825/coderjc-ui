@@ -1,0 +1,35 @@
+@use './config.scss' as *;
+
+@function lighten-color($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// danger: #f01234,
+// danger: #d50021,
+// warning: #ee5514,
+// success: #0d9838,
+
+// 主题色
+$colors: (
+  primary: #009688,
+  success: #0aaf3c,
+  warning: #ff8809,
+  danger: #ef4751,
+  info: #b2b4b3
+) !default;
+
+@mixin set-css-var() {
+  @each $name, $color in $colors {
+    --#{$namespace}-color-#{$name}: #{$color};
+
+    @for $i from 3 through 9 {
+      $percentage: $i * 10%;
+      $light-color: lighten-color($color, $percentage);
+      --#{$namespace}-color-#{$name}-light-#{$i}: #{$light-color};
+    }
+  }
+}
+
+@mixin set-other-css-var($name, $value) {
+  #{$name}: #{$value};
+}

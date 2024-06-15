@@ -1,0 +1,80 @@
+@use './config.scss' as *;
+@forward 'config';
+
+// c-button
+@mixin b($block) {
+  $B: $namespace + '-' + $block;
+  .#{$B} {
+    @content;
+  }
+}
+
+// c-button.is-state
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+// &--primary => .c-button--primary
+@mixin m($modifier) {
+  @at-root {
+    #{& + $modifier-separtor + $modifier} {
+      @content;
+    }
+  }
+}
+
+// &__header => .c-button__header
+@mixin e($element) {
+  @at-root {
+    #{& + $element-separtor + $element} {
+      @content;
+    }
+  }
+}
+
+// &__header => .c-button__header--disabled
+@mixin em($element, $modifier) {
+  @at-root {
+    #{& + $element-separtor + $element + $modifier-separtor + $modifier} {
+      @content;
+    }
+  }
+}
+
+// Scrollbar
+@mixin scroll-bar {
+  $scrollbar-thumb-background: #ced4da;
+  $scrollbar-track-background: #fff;
+
+  &::-webkit-scrollbar {
+    z-index: 11;
+    width: 6px;
+
+    &:horizontal {
+      height: 6px;
+    }
+
+    &-thumb {
+      border-radius: 5px;
+      width: 6px;
+      background: $scrollbar-thumb-background;
+    }
+
+    &-corner {
+      background: $scrollbar-track-background;
+    }
+
+    &-track {
+      background: $scrollbar-track-background;
+
+      &-piece {
+        background: $scrollbar-track-background;
+        width: 6px;
+      }
+    }
+  }
+}
