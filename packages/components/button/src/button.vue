@@ -15,13 +15,6 @@ const emits = defineEmits(buttonEmits)
 
 const buttonGroupInject = inject(ButtonGroupKey, undefined)
 
-watch(
-  () => buttonGroupInject?.type,
-  val => {
-    console.log(val)
-  }
-)
-
 const buttonCls = computed(() => [
   bem.b(),
   bem.m(buttonGroupInject?.type || props.type),
