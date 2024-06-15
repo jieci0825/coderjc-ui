@@ -164,6 +164,7 @@ export const inputProps = {
   /**
    * @description 输入时是否触发表单的校验
    */
+  // TODO
   validateEvent: {},
 
   /**

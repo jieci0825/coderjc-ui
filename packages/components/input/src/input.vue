@@ -107,7 +107,16 @@ const containerCls = computed(() => {
   const _prependGroupCls = bem.is('group-prepend', Boolean(slots.prepend))
   const _appendGroupCls = bem.is('group-append', Boolean(slots.append))
   const _sizeCls = bem.is(sizeValue.value, !!sizeValue.value)
-  return [_containerCls, _groupCls, _prependGroupCls, _appendGroupCls, _sizeCls]
+  const _disabledCls = bem.is('disabled', props.disabled)
+
+  return [
+    _containerCls,
+    _groupCls,
+    _prependGroupCls,
+    _appendGroupCls,
+    _sizeCls,
+    _disabledCls
+  ]
 })
 
 const isComposing = ref(false)

@@ -5,7 +5,7 @@ layout: home
 hero:
   name: 'Coderjc UI'
   text: '基于 Vue3 的组件库'
-  tagline: '是一个刚刚起步的个人开发组件库，我会尽我所能的去完善它，道阻且长，行则将至！'
+  tagline: '是一个刚刚起步的个人开发组件库，我会尽我所能的去完善它，虽道阻且长，但行则将至！'
   image:
     src: http://cos.coderjc.cn/my-resource/icon/icon.svg
     alt: 'VitePress Logo'

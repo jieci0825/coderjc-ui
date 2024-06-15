@@ -58,8 +58,7 @@
     getOtherCssVar('font', 'size', 'extra-large'),
     20px
   );
-  @include set-other-css-var(getOtherCssVar('font', 'size', 'large'), 18px);
-  @include set-other-css-var(getOtherCssVar('font', 'size', 'medium'), 16px);
+  @include set-other-css-var(getOtherCssVar('font', 'size', 'large'), 16px);
   @include set-other-css-var(getOtherCssVar('font', 'size', 'base'), 14px);
   @include set-other-css-var(getOtherCssVar('font', 'size', 'small'), 13px);
   @include set-other-css-var(

@@ -1,6 +1,6 @@
 # Icon 图标
 
-功名半纸，风雪千山
+我没有天赋，但是我想试试
 
 > [!TIP]
 > 在 coderjc-ui 中推荐使用 [xicons](https://www.xicons.org/#/) 作为图标库
