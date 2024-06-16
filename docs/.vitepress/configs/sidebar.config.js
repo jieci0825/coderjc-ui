@@ -20,6 +20,7 @@ export default {
       text: 'Form 表单组件',
       items: [
         { text: 'Checkbox 多选框', link: '/component/form/checkbox' },
+        { text: 'Form 表单', link: '/component/form/form' },
         { text: 'Input 多选框', link: '/component/form/input' }
       ]
     },

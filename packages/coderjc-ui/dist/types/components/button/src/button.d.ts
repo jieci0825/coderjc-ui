@@ -47,7 +47,6 @@ export declare const buttonProps: {
 };
 export declare const buttonEmits: {
     click: (evt: MouseEvent) => boolean;
-    dbclick: (evt: MouseEvent) => boolean;
 };
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>;
 export type ButtonEmits = typeof buttonEmits;

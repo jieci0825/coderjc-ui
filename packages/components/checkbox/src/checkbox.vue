@@ -3,11 +3,16 @@ import { computed, inject, onMounted, ref } from 'vue'
 import { createNamespace } from '@coderjc-ui/utils'
 import { checkboxEmits, checkboxProps } from './checkbox'
 import { provideCheckboxGroupKey } from './checkbox-group'
+import { FormContextKey, FormItemContextKey } from '@coderjc-ui/components/form'
+import { SizeType } from './checkbox.type'
 
 defineOptions({ name: 'c-checkbox' })
 
 // 提取父组件注入的数据
 const checkboxGroupInject = inject(provideCheckboxGroupKey, undefined)
+// 祖先组件
+const formContextInject = inject(FormContextKey, undefined)
+const formItemContextInject = inject(FormItemContextKey, undefined)
 
 const bem = createNamespace('checkbox')
 const props = defineProps(checkboxProps)
@@ -37,6 +42,8 @@ function handleChange(e: Event) {
   } else {
     emits('change', value)
   }
+  // 修改值的时候，触发校验
+  formItemContextInject?.validate('change').catch(() => {})
 }
 
 const compInputCls = computed(() => {
@@ -45,10 +52,18 @@ const compInputCls = computed(() => {
     ? bem.is('checked', !!model.value)
     : bem.is('indeterminate', props.indeterminate)
 })
+
+const sizeValue = computed(() => {
+  // 优先级：props > formItemContextInject > formContextInject
+  let size: SizeType = (props.size ||
+    formItemContextInject?.size ||
+    formContextInject?.size)!
+  return size
+})
 </script>
 
 <template>
-  <label :class="bem.b()">
+  <label :class="[bem.b(), bem.is(sizeValue, !!sizeValue)]">
     <span
       :class="[
         bem.e('input'),

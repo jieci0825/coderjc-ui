@@ -9,8 +9,11 @@ export type FormItemValidateStateType = '' | 'success' | 'error';
 export type TriggerType = '' | 'blur' | 'change';
 export type Arrayable<T> = T | T[];
 export interface FormItemRule extends RuleItem {
-    trigger?: Arrayable<string>;
+    trigger?: Arrayable<TriggerType>;
 }
+export type FormDataRules<T> = {
+    [K in keyof T]: FormItemRule | FormItemRule[];
+};
 export interface FormValidateFailure {
     errors: ValidateError[] | null;
     fields: ValidateFieldsError;

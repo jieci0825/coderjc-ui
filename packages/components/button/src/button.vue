@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed } from 'vue'
 import { Loading3QuartersOutlined } from '@vicons/antd'
 import { CIcon } from '@coderjc-ui/components'
 import { createNamespace } from '@coderjc-ui/utils'
 import { buttonProps, buttonEmits } from './button'
 import { inject } from 'vue'
 import { ButtonGroupKey } from './constant'
+import { FormContextKey, FormItemContextKey } from '@coderjc-ui/components/form'
+import { SizeType } from './button.type'
 
 defineOptions({ name: 'c-button' })
 
@@ -14,11 +16,21 @@ const props = defineProps(buttonProps)
 const emits = defineEmits(buttonEmits)
 
 const buttonGroupInject = inject(ButtonGroupKey, undefined)
+const formContextInject = inject(FormContextKey, undefined)
+const formItemContextInject = inject(FormItemContextKey, undefined)
+
+const sizeValue = computed(() => {
+  // 优先级：props > formItemContextInject > formContextInject
+  let size: SizeType = (props.size ||
+    formItemContextInject?.size ||
+    formContextInject?.size)!
+  return size
+})
 
 const buttonCls = computed(() => [
   bem.b(),
   bem.m(buttonGroupInject?.type || props.type),
-  bem.m(buttonGroupInject?.size || props.size),
+  bem.m(sizeValue.value),
   bem.is('disabled', props.disabled),
   bem.is('loading', props.loading),
   bem.is('plain', props.plain),

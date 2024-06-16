@@ -1,4 +1,4 @@
-export type Size = 'large' | 'default' | 'small'
+export type SizeType = 'large' | 'default' | 'small' | ''
 
 export type Type = 'primary' | 'success' | 'warning' | 'danger' | 'info' | ''
 

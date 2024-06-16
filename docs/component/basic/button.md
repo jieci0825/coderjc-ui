@@ -43,7 +43,7 @@
 | 属性名         | 说明                                         | 类型                                                         | 默认值   |
 | :------------- | -------------------------------------------- | ------------------------------------------------------------ | -------- |
 | type           | 类型                                         | `'' / 'primary' / 'success' / 'warning' / 'danger' / 'info'` | --       |
-| size           | 尺寸                                         | `'large' / 'default' / 'small'`                              | --       |
+| size           | 尺寸                                         | `'large' / 'default' / 'small' / ''`                             | --       |
 | plain          | 是否为朴素按钮                               | `boolean`                                                    | false    |
 | round          | 是否为圆角按钮                               | `boolean`                                                    | false    |
 | circle         | 是否为圆形按钮                               | `boolean`                                                    | false    |

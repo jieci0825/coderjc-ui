@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, provide, reactive, toRefs } from 'vue'
-import { createNamespace, ensureArray } from '@coderjc-ui/utils'
+import { createNamespace, ensureArray, isFunction } from '@coderjc-ui/utils'
 import { formProps } from './form'
 import {
   FormContext,
@@ -108,13 +108,15 @@ const validate = async (callback?: FormValidateCallback): Promise<boolean> => {
     }
   }
 
+  const hasCallback = isFunction(callback)
+
   if (Object.keys(validationErrors).length === 0) {
     callback?.(true)
     return true
   }
 
   callback?.(false, validationErrors)
-  return Promise.reject(validationErrors)
+  return hasCallback ? false : Promise.reject(validationErrors)
 }
 
 // 获取所有需要校验的字段

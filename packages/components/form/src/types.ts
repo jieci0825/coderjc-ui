@@ -18,7 +18,12 @@ export type TriggerType = '' | 'blur' | 'change'
 export type Arrayable<T> = T | T[]
 
 export interface FormItemRule extends RuleItem {
-  trigger?: Arrayable<string>
+  trigger?: Arrayable<TriggerType>
+}
+
+// 定义工具类型
+export type FormDataRules<T> = {
+  [K in keyof T]: FormItemRule | FormItemRule[]
 }
 
 export interface FormValidateFailure {

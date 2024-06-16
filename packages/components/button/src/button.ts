@@ -1,5 +1,5 @@
 import { PropType, ExtractPropTypes, Component } from 'vue'
-import { NativeType, Placement, Size, Type } from './button.type'
+import { NativeType, Placement, SizeType, Type } from './button.type'
 
 export const buttonProps = {
   /**
@@ -14,7 +14,7 @@ export const buttonProps = {
    * @description 尺寸
    */
   size: {
-    type: String as PropType<Size>
+    type: String as PropType<SizeType>
   },
 
   /**

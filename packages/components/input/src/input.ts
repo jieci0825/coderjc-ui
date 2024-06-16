@@ -158,7 +158,7 @@ export const inputProps = {
    */
   tabindex: {
     type: [String, Number] as PropType<string | number>,
-    default: -1
+    default: 0
   },
 
   /**

@@ -20,12 +20,8 @@ export declare const checkboxProps: {
         readonly default: false;
     };
     readonly size: {
-        readonly type: PropType<"default" | "small" | "large">;
+        readonly type: PropType<"large" | "default" | "small">;
         readonly default: "default";
-    };
-    readonly name: {
-        readonly type: StringConstructor;
-        readonly default: "";
     };
 };
 export declare const checkboxEmits: {

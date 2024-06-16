@@ -3,6 +3,7 @@ import {
   CIcon,
   CTree,
   CButton,
+  CButtonGroup,
   CCheckbox,
   CCheckboxGroup,
   CVirtual,
@@ -11,7 +12,7 @@ import {
   CFormItem,
   CEmpty
 } from '@coderjc-ui/components/index.ts'
-import {  ElementPlusContainer } from '@vitepress-demo-preview/component'
+import { ElementPlusContainer } from '@vitepress-demo-preview/component'
 
 import '@vitepress-demo-preview/component/dist/style.css'
 import '@coderjc-ui/theme-chalk/src/index.scss'
@@ -21,6 +22,7 @@ const components = [
   CIcon,
   CTree,
   CButton,
+  CButtonGroup,
   CCheckbox,
   CCheckboxGroup,
   CVirtual,

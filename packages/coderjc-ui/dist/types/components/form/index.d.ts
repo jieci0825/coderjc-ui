@@ -274,6 +274,7 @@ export declare const CFormItem: import('../../utils').SFCWithInstall<{
 })>;
 export * from './src/form';
 export * from './src/form-item';
+export * from './src/types';
 declare module 'vue' {
     interface GlobalComponents {
         CForm: typeof CForm;

@@ -1,4 +1,4 @@
-b# Input 输入框
+# Input 输入框
 精神濒临崩溃的症状之一，就是相信自己的工作非常重要
 
 > [!CAUTION]
@@ -56,7 +56,7 @@ b# Input 输入框
 | show-word-limit       | 是否显示统计字数, 只在 `type` 为 'text' 或 'textarea' 的时候生效 | `boolean`                                                    | false   |
 | disabled              | 是否禁用                                                     | `boolean`                                                    | false   |
 | clearable             | 是否显示清除按钮                                             | `boolean`                                                    | false   |
-| size                  | 输入框尺寸，对 `type="texterea"` 无效                        | `'large' / 'default' / 'small'`                              | default |
+| size                  | 输入框尺寸，对 `type="texterea"` 无效                        | `'large' / 'default' / 'small' / ''`                           | default |
 | rows                  | 输入框行数，仅对 `type="texterea"` 无效                      | `number`                                                     | 2       |
 | prefix-icon           | 自定义前缀图标                                               | `string` / `Component`                                       | --      |
 | suffix-icon           | 自定义后缀图标                                               | `string` / `Component`                                       | --      |

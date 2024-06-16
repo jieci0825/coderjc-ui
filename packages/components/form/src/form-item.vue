@@ -22,7 +22,8 @@ import {
   FormContextKey,
   Arrayable,
   FormValidateFailure,
-  SizeType
+  SizeType,
+  TriggerType
 } from './types'
 import { clone } from 'lodash-unified'
 
@@ -80,7 +81,7 @@ const _rules = computed(() => {
 
   // 查看当前表单项是否直接设置了 required 属性，如果设置了，且规则中没有 required 规则，则添加 required 规则
   const allRules = [...selfRules, ...formRules]
-  if (!isExistRequiredRule(allRules)) {
+  if (props.required && !isExistRequiredRule(allRules)) {
     allRules.push({
       required: true,
       message: `${
@@ -117,7 +118,7 @@ function createRuleArray(
 }
 
 // 根据触发条件获取符合触发条件的规则
-function getCurrentFieldRules(trigger: string): FormItemRule[] {
+function getCurrentFieldRules(trigger: TriggerType): FormItemRule[] {
   // 根据触发时机，获取当前字段的校验规则
   if (!_rules.value.length) return []
   const rules = _rules.value.filter(rule => {

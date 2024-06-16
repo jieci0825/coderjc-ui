@@ -18,12 +18,8 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
         readonly default: false;
     };
     readonly size: {
-        readonly type: import('vue').PropType<"default" | "small" | "large">;
+        readonly type: import('vue').PropType<"large" | "default" | "small">;
         readonly default: "default";
-    };
-    readonly name: {
-        readonly type: StringConstructor;
-        readonly default: "";
     };
 }, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     change: (value: boolean) => void;
@@ -48,19 +44,14 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
         readonly default: false;
     };
     readonly size: {
-        readonly type: import('vue').PropType<"default" | "small" | "large">;
+        readonly type: import('vue').PropType<"large" | "default" | "small">;
         readonly default: "default";
-    };
-    readonly name: {
-        readonly type: StringConstructor;
-        readonly default: "";
     };
 }>> & {
     onChange?: ((value: boolean) => any) | undefined;
     "onUpdate:modelValue"?: ((value: string | number | boolean) => any) | undefined;
 }, {
-    readonly size: "default" | "small" | "large";
-    readonly name: string;
+    readonly size: "large" | "default" | "small";
     readonly label: string;
     readonly disabled: boolean;
     readonly indeterminate: boolean;

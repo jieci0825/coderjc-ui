@@ -44,10 +44,8 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
         };
     }>> & {
         onClick?: ((evt: MouseEvent) => any) | undefined;
-        onDbclick?: ((evt: MouseEvent) => any) | undefined;
     }, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
         click: (evt: MouseEvent) => void;
-        dbclick: (evt: MouseEvent) => void;
     }, import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & Readonly<import('vue').ExtractPropTypes<{
         readonly type: {
             readonly type: import('vue').PropType<import('./src/button.type').Type>;
@@ -93,7 +91,6 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
         };
     }>> & {
         onClick?: ((evt: MouseEvent) => any) | undefined;
-        onDbclick?: ((evt: MouseEvent) => any) | undefined;
     }, {
         readonly type: import('./src/button.type').Type;
         readonly circle: boolean;
@@ -156,7 +153,6 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
         };
     }>> & {
         onClick?: ((evt: MouseEvent) => any) | undefined;
-        onDbclick?: ((evt: MouseEvent) => any) | undefined;
     }, {}, {}, {}, {}, {
         readonly type: import('./src/button.type').Type;
         readonly circle: boolean;
@@ -216,10 +212,8 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
     };
 }>> & {
     onClick?: ((evt: MouseEvent) => any) | undefined;
-    onDbclick?: ((evt: MouseEvent) => any) | undefined;
 }, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     click: (evt: MouseEvent) => void;
-    dbclick: (evt: MouseEvent) => void;
 }, string, {
     readonly type: import('./src/button.type').Type;
     readonly circle: boolean;
@@ -237,9 +231,73 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
     };
 })>;
 export default CButton;
+export declare const CButtonGroup: import('../../utils').SFCWithInstall<{
+    new (...args: any[]): import('vue').CreateComponentPublicInstance<Readonly<import('vue').ExtractPropTypes<{
+        type: {
+            type: import('vue').PropType<import('./src/button.type').Type>;
+            default: string;
+        };
+        size: {
+            type: import('vue').PropType<import('./src/button.type').Size>;
+            default: string;
+        };
+    }>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & Readonly<import('vue').ExtractPropTypes<{
+        type: {
+            type: import('vue').PropType<import('./src/button.type').Type>;
+            default: string;
+        };
+        size: {
+            type: import('vue').PropType<import('./src/button.type').Size>;
+            default: string;
+        };
+    }>>, {
+        size: import('./src/button.type').Size;
+        type: import('./src/button.type').Type;
+    }, true, {}, {}, {
+        P: {};
+        B: {};
+        D: {};
+        C: {};
+        M: {};
+        Defaults: {};
+    }, Readonly<import('vue').ExtractPropTypes<{
+        type: {
+            type: import('vue').PropType<import('./src/button.type').Type>;
+            default: string;
+        };
+        size: {
+            type: import('vue').PropType<import('./src/button.type').Size>;
+            default: string;
+        };
+    }>>, {}, {}, {}, {}, {
+        size: import('./src/button.type').Size;
+        type: import('./src/button.type').Type;
+    }>;
+    __isFragment?: undefined;
+    __isTeleport?: undefined;
+    __isSuspense?: undefined;
+} & import('vue').ComponentOptionsBase<Readonly<import('vue').ExtractPropTypes<{
+    type: {
+        type: import('vue').PropType<import('./src/button.type').Type>;
+        default: string;
+    };
+    size: {
+        type: import('vue').PropType<import('./src/button.type').Size>;
+        default: string;
+    };
+}>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, {
+    size: import('./src/button.type').Size;
+    type: import('./src/button.type').Type;
+}, {}, string, {}> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
+    $slots: {
+        default?(_: {}): any;
+    };
+})>;
 export * from './src/button';
+export * from './src/button-group';
 declare module 'vue' {
     interface GlobalComponents {
         CButton: typeof CButton;
+        CButtonGroup: typeof CButtonGroup;
     }
 }

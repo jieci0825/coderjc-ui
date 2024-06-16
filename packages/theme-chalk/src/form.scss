@@ -37,13 +37,14 @@
   }
 
   @include e(label) {
-    position: relative;
     width: auto;
     height: 100%;
     padding-right: 10px;
+    position: relative;
   }
 
   @include e(content) {
+    flex: 1;
     position: relative;
     display: flex;
     align-items: center;
@@ -77,18 +78,20 @@
 
   @include when(top) {
     flex-direction: column;
+    align-items: flex-start;
+    height: auto;
     .#{$namespace}-form-item__label-wrap {
-      height: 22px;
+      height: 1rem;
+      line-height: 22px;
       margin-left: 0;
       margin-bottom: 5px;
 
       .#{$namespace}-form-item__label {
-        line-height: 2;
         padding-right: 0;
-        &::before {
-          left: 100%;
-        }
       }
+    }
+    .#{$namespace}-form-item__content {
+      width: 100%;
     }
   }
 

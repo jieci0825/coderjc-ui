@@ -43,7 +43,6 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
     };
 }, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     click: (evt: MouseEvent) => void;
-    dbclick: (evt: MouseEvent) => void;
 }, string, import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
     readonly type: {
         readonly type: import('vue').PropType<import('./button.type').Type>;
@@ -89,7 +88,6 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
     };
 }>> & {
     onClick?: ((evt: MouseEvent) => any) | undefined;
-    onDbclick?: ((evt: MouseEvent) => any) | undefined;
 }, {
     readonly type: import('./button.type').Type;
     readonly circle: boolean;

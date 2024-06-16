@@ -1,5 +1,5 @@
 import { ExtractPropTypes, PropType } from 'vue'
-import type { ValueType } from './checkbox.type'
+import type { SizeType, ValueType } from './checkbox.type'
 
 export const checkboxProps = {
   /**
@@ -46,8 +46,7 @@ export const checkboxProps = {
    * @description checkbox的尺寸
    */
   size: {
-    type: String as PropType<'small' | 'default' | 'large'>,
-    default: 'default'
+    type: String as PropType<SizeType>
   }
 } as const
 export const checkboxEmits = {

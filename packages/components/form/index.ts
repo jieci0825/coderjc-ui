@@ -9,6 +9,7 @@ export const CFormItem = withInstall(FormItem)
 
 export * from './src/form'
 export * from './src/form-item'
+export * from './src/types'
 
 declare module 'vue' {
   export interface GlobalComponents {
