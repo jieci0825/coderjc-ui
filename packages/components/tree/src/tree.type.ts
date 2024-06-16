@@ -22,3 +22,7 @@ export interface TreeContext {
   slots: SetupContext['slots']
   // emit: SetupContext<TreeEmits>['emit']
 }
+
+export interface RootTreeType {
+  _emits: any
+}

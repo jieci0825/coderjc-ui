@@ -1,4 +1,5 @@
 import { ExtractPropTypes, PropType } from 'vue';
+import { SizeType } from './checkbox.type';
 
 export declare const checkboxProps: {
     readonly modelValue: {
@@ -20,8 +21,7 @@ export declare const checkboxProps: {
         readonly default: false;
     };
     readonly size: {
-        readonly type: PropType<"large" | "default" | "small">;
-        readonly default: "default";
+        readonly type: PropType<SizeType>;
     };
 };
 export declare const checkboxEmits: {

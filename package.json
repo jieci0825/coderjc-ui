@@ -1,6 +1,4 @@
 {
-  "name": "coderjc-ui",
-  "version": "0.1.0",
   "private": true,
   "main": "./lib/coderjc-ui.cjs.js",
   "module": "./es/coderjc-ui.es.js",

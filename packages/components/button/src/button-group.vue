@@ -2,7 +2,7 @@
 import { createNamespace } from '@coderjc-ui/utils'
 import { buttonGroupProps } from './button-group'
 import { provide, reactive, toRefs } from 'vue'
-import { ButtonGroupKey } from './constant'
+import { ButtonGroupKey } from './constants'
 
 defineOptions({ name: 'c-button-group' })
 

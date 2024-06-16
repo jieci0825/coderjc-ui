@@ -8,7 +8,7 @@ export declare const treeProps: {
     };
     readonly emptyText: {
         readonly type: StringConstructor;
-        readonly default: "没有数据";
+        readonly default: "没有数据...";
     };
     readonly nodeKey: {
         readonly type: StringConstructor;
@@ -59,6 +59,7 @@ export declare const treeProps: {
 };
 export declare const treeEmits: {
     'update:selectedKeys': (keys: Key[]) => boolean;
+    'node-click': (node: TreeOptions, evt: MouseEvent) => boolean;
 };
 export type TreeProps = Partial<ExtractPropTypes<typeof treeProps>>;
 export type TreeEmits = typeof treeEmits;

@@ -19,8 +19,7 @@ export declare const CCheckbox: import('../../utils').SFCWithInstall<{
             readonly default: false;
         };
         readonly size: {
-            readonly type: import('vue').PropType<"large" | "default" | "small">;
-            readonly default: "default";
+            readonly type: import('vue').PropType<import('./src/checkbox.type').SizeType>;
         };
     }>> & {
         onChange?: ((value: boolean) => any) | undefined;
@@ -48,14 +47,12 @@ export declare const CCheckbox: import('../../utils').SFCWithInstall<{
             readonly default: false;
         };
         readonly size: {
-            readonly type: import('vue').PropType<"large" | "default" | "small">;
-            readonly default: "default";
+            readonly type: import('vue').PropType<import('./src/checkbox.type').SizeType>;
         };
     }>> & {
         onChange?: ((value: boolean) => any) | undefined;
         "onUpdate:modelValue"?: ((value: string | number | boolean) => any) | undefined;
     }, {
-        readonly size: "large" | "default" | "small";
         readonly label: string;
         readonly disabled: boolean;
         readonly indeterminate: boolean;
@@ -86,14 +83,12 @@ export declare const CCheckbox: import('../../utils').SFCWithInstall<{
             readonly default: false;
         };
         readonly size: {
-            readonly type: import('vue').PropType<"large" | "default" | "small">;
-            readonly default: "default";
+            readonly type: import('vue').PropType<import('./src/checkbox.type').SizeType>;
         };
     }>> & {
         onChange?: ((value: boolean) => any) | undefined;
         "onUpdate:modelValue"?: ((value: string | number | boolean) => any) | undefined;
     }, {}, {}, {}, {}, {
-        readonly size: "large" | "default" | "small";
         readonly label: string;
         readonly disabled: boolean;
         readonly indeterminate: boolean;
@@ -121,8 +116,7 @@ export declare const CCheckbox: import('../../utils').SFCWithInstall<{
         readonly default: false;
     };
     readonly size: {
-        readonly type: import('vue').PropType<"large" | "default" | "small">;
-        readonly default: "default";
+        readonly type: import('vue').PropType<import('./src/checkbox.type').SizeType>;
     };
 }>> & {
     onChange?: ((value: boolean) => any) | undefined;
@@ -131,7 +125,6 @@ export declare const CCheckbox: import('../../utils').SFCWithInstall<{
     change: (value: boolean) => void;
     "update:modelValue": (value: string | number | boolean) => void;
 }, string, {
-    readonly size: "large" | "default" | "small";
     readonly label: string;
     readonly disabled: boolean;
     readonly indeterminate: boolean;

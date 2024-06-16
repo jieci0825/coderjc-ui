@@ -77,7 +77,7 @@ export declare const inputProps: {
     };
     readonly tabindex: {
         readonly type: PropType<string | number>;
-        readonly default: -1;
+        readonly default: 0;
     };
     readonly validateEvent: {};
     readonly inputStyle: {

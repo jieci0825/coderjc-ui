@@ -76,7 +76,7 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
     };
     readonly tabindex: {
         readonly type: import('vue').PropType<string | number>;
-        readonly default: -1;
+        readonly default: 0;
     };
     readonly validateEvent: {};
     readonly inputStyle: {
@@ -170,7 +170,7 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
     };
     readonly tabindex: {
         readonly type: import('vue').PropType<string | number>;
-        readonly default: -1;
+        readonly default: 0;
     };
     readonly validateEvent: {};
     readonly inputStyle: {

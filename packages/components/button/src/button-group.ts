@@ -1,5 +1,5 @@
 import { PropType, ExtractPropTypes } from 'vue'
-import { Size, Type } from './button.type'
+import { SizeType, Type } from './button.type'
 
 export const buttonGroupProps = {
   /**
@@ -14,7 +14,7 @@ export const buttonGroupProps = {
    * @description 尺寸
    */
   size: {
-    type: String as PropType<Size>,
+    type: String as PropType<SizeType>,
     default: 'default'
   }
 }

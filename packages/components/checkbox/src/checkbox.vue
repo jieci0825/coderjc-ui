@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, inject, onMounted, ref } from 'vue'
+import { computed, inject } from 'vue'
 import { createNamespace } from '@coderjc-ui/utils'
 import { checkboxEmits, checkboxProps } from './checkbox'
 import { provideCheckboxGroupKey } from './checkbox-group'

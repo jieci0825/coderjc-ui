@@ -5,7 +5,7 @@ import { CIcon } from '@coderjc-ui/components'
 import { createNamespace } from '@coderjc-ui/utils'
 import { buttonProps, buttonEmits } from './button'
 import { inject } from 'vue'
-import { ButtonGroupKey } from './constant'
+import { ButtonGroupKey } from './constants'
 import { FormContextKey, FormItemContextKey } from '@coderjc-ui/components/form'
 import { SizeType } from './button.type'
 

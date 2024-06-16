@@ -5,7 +5,7 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
     };
     readonly emptyText: {
         readonly type: StringConstructor;
-        readonly default: "没有数据";
+        readonly default: "没有数据...";
     };
     readonly nodeKey: {
         readonly type: StringConstructor;
@@ -55,8 +55,10 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
     };
 }, {
     flatenTree: import('vue').ComputedRef<import('./src/tree.type').TreeNode[]>;
+    getCurrentKeyRawNode: (key: import('./src/tree.type').Key, isRaw?: boolean) => import('./src/tree.type').TreeOptions | import('./src/tree.type').TreeNode | undefined;
 }, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     "update:selectedKeys": (keys: import('./src/tree.type').Key[]) => void;
+    "node-click": (node: import('./src/tree.type').TreeOptions, evt: MouseEvent) => void;
 }, string, import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
     readonly data: {
         readonly type: import('vue').PropType<import('./src/tree.type').TreeOptions[]>;
@@ -64,7 +66,7 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
     };
     readonly emptyText: {
         readonly type: StringConstructor;
-        readonly default: "没有数据";
+        readonly default: "没有数据...";
     };
     readonly nodeKey: {
         readonly type: StringConstructor;
@@ -114,6 +116,7 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
     };
 }>> & {
     "onUpdate:selectedKeys"?: ((keys: import('./src/tree.type').Key[]) => any) | undefined;
+    "onNode-click"?: ((node: import('./src/tree.type').TreeOptions, evt: MouseEvent) => any) | undefined;
 }, {
     readonly data: import('./src/tree.type').TreeOptions[];
     readonly emptyText: string;
@@ -130,6 +133,8 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
 }, {}>>;
 export default CTree;
 export * from './src/tree';
+export * from './src/constans';
+export * from './src/tree.type';
 declare module 'vue' {
     interface GlobalComponents {
         CTree: typeof CTree;

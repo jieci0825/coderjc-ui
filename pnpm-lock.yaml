@@ -129,6 +129,10 @@ importers:
       vitepress:
         specifier: 1.0.1
         version: 1.0.1(@algolia/client-search@4.23.3)(@types/node@20.14.2)(async-validator@4.2.5)(less@4.2.0)(postcss@8.4.38)(sass@1.77.5)(search-insights@2.14.0)(terser@5.31.1)(typescript@5.4.5)
+    devDependencies:
+      coderjc-ui:
+        specifier: ^0.1.2
+        version: link:../packages/coderjc-ui
 
   examples:
     dependencies:

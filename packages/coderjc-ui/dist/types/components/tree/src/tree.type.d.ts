@@ -18,3 +18,6 @@ export interface TreeNode extends Required<TreeOptions> {
 export interface TreeContext {
     slots: SetupContext['slots'];
 }
+export interface RootTreeType {
+    _emits: any;
+}

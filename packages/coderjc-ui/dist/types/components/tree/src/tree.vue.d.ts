@@ -1,5 +1,6 @@
 import { Key, TreeNode, TreeOptions } from './tree.type';
 
+declare function getCurrentKeyRawNode(key: Key, isRaw?: boolean): TreeNode | TreeOptions | undefined;
 declare const _default: import('vue').DefineComponent<{
     readonly data: {
         readonly type: import('vue').PropType<TreeOptions[]>;
@@ -7,7 +8,7 @@ declare const _default: import('vue').DefineComponent<{
     };
     readonly emptyText: {
         readonly type: StringConstructor;
-        readonly default: "没有数据";
+        readonly default: "没有数据...";
     };
     readonly nodeKey: {
         readonly type: StringConstructor;
@@ -57,8 +58,10 @@ declare const _default: import('vue').DefineComponent<{
     };
 }, {
     flatenTree: import('vue').ComputedRef<TreeNode[]>;
+    getCurrentKeyRawNode: typeof getCurrentKeyRawNode;
 }, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     "update:selectedKeys": (keys: Key[]) => void;
+    "node-click": (node: TreeOptions, evt: MouseEvent) => void;
 }, string, import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<{
     readonly data: {
         readonly type: import('vue').PropType<TreeOptions[]>;
@@ -66,7 +69,7 @@ declare const _default: import('vue').DefineComponent<{
     };
     readonly emptyText: {
         readonly type: StringConstructor;
-        readonly default: "没有数据";
+        readonly default: "没有数据...";
     };
     readonly nodeKey: {
         readonly type: StringConstructor;
@@ -116,6 +119,7 @@ declare const _default: import('vue').DefineComponent<{
     };
 }>> & {
     "onUpdate:selectedKeys"?: ((keys: Key[]) => any) | undefined;
+    "onNode-click"?: ((node: TreeOptions, evt: MouseEvent) => any) | undefined;
 }, {
     readonly data: TreeOptions[];
     readonly emptyText: string;

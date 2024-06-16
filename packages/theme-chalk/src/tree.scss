@@ -3,6 +3,14 @@
 
 @include b(tree) {
   width: 100%;
+
+  @include e(empty) {
+    color: getCssVar('text', 'color', 'placeholder');
+  }
+
+  .#{$namespace}-checkbox {
+    margin-right: 0;
+  }
 }
 
 @include b(tree-node) {

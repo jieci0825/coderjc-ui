@@ -16,7 +16,7 @@ export const treeProps = {
    */
   emptyText: {
     type: String,
-    default: '没有数据'
+    default: '没有数据...'
   },
 
   /**
@@ -58,7 +58,6 @@ export const treeProps = {
     default: false
   },
 
-  // TODO
   /**
    * @description 默认选中的节点
    */
@@ -95,15 +94,22 @@ export const treeProps = {
   /**
    * @description 是否开启虚拟滚动
    */
-  isVirtual: {
+  virtual: {
     type: Boolean,
     default: false
   },
 
   /**
-   * @description 为了更好的渲染效果预先多多少条数据，需要开启虚拟滚动
+   * @description 为了更好的渲染效果预先多多少条数据，需要设置 virtual
    */
   cache: {
+    type: Number
+  },
+
+  /**
+   * @description 可视区域应该展示多少条数据，需要设置 virtual
+   */
+  remain: {
     type: Number,
     default: 8
   },
@@ -117,7 +123,8 @@ export const treeProps = {
   }
 } as const
 export const treeEmits = {
-  'update:selectedKeys': (keys: Key[]) => true
+  'update:selectedKeys': (keys: Key[]) => true,
+  'node-click': (node: TreeOptions, evt: MouseEvent) => true
 }
 
 // props type

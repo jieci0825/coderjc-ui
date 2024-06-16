@@ -10,7 +10,7 @@ export default {
   ],
   '/component/': [
     {
-      text: '基础组件',
+      text: 'Basic 基础组件',
       items: [
         { text: 'Button 按钮', link: '/component/basic/button' },
         { text: 'Icon 图标', link: '/component/basic/icon' }
@@ -25,8 +25,8 @@ export default {
       ]
     },
     {
-      text: '配置组件',
-      items: []
+      text: 'Data 数据展示',
+      items: [{ text: 'Tree 树形控件', link: '/component/data/tree' }]
     }
   ]
 }

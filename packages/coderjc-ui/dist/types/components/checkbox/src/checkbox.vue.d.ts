@@ -1,3 +1,5 @@
+import { SizeType } from './checkbox.type';
+
 declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
     readonly modelValue: {
         readonly type: import('vue').PropType<string | number | boolean>;
@@ -18,8 +20,7 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
         readonly default: false;
     };
     readonly size: {
-        readonly type: import('vue').PropType<"large" | "default" | "small">;
-        readonly default: "default";
+        readonly type: import('vue').PropType<SizeType>;
     };
 }, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     change: (value: boolean) => void;
@@ -44,14 +45,12 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
         readonly default: false;
     };
     readonly size: {
-        readonly type: import('vue').PropType<"large" | "default" | "small">;
-        readonly default: "default";
+        readonly type: import('vue').PropType<SizeType>;
     };
 }>> & {
     onChange?: ((value: boolean) => any) | undefined;
     "onUpdate:modelValue"?: ((value: string | number | boolean) => any) | undefined;
 }, {
-    readonly size: "large" | "default" | "small";
     readonly label: string;
     readonly disabled: boolean;
     readonly indeterminate: boolean;

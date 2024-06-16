@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed, provide, ref, useSlots, watch } from 'vue'
+import { computed, provide, ref, useAttrs, useSlots, watch } from 'vue'
 import { treeEmits, treeInjectKey, treeProps } from './tree'
 import { Key, TreeNode, TreeOptions } from './tree.type'
 import { createNamespace } from '@coderjc-ui/utils'
 import CTreeNode from './tree-node.vue'
 import CVirtual from '@coderjc-ui/components/virtual'
+import { RootTreeKey } from './constans'
 
 const bem = createNamespace('tree')
 defineOptions({ name: 'c-tree' })
@@ -124,7 +125,7 @@ async function triggerLoad(node: TreeNode) {
   const onLoad = props.load
   // 存在 load 方法、 非叶子节点时加载、且 children 无数据
   //  - 三者条件都满足，才触发加载
-  if (onLoad && !node.isLeaf && !node.children.length) {
+  if (onLoad && !node.isLeaf && !node?.children.length) {
     const loadingKeys = loadingKeysRef.value
     // 如果正在加载中也无需再次加载
     if (!loadingKeys.has(node.key)) {
@@ -157,7 +158,7 @@ watch(
     selectedKeysRef.value = props.defaultCheckedKeys
     // 处理第一次时的选中状态
     props.defaultCheckedKeys.forEach(key => {
-      const node = getCurrentKeyRawNode(key, false) as TreeNode
+      const node = getCurrentKeyNode(key, false) as TreeNode
       node && processNodeCascadeState(node, selectedKeysRef.value)
     })
   },
@@ -274,14 +275,20 @@ function removeSelectedKey(keys: Key[], key: Key) {
   index > -1 && keys.splice(index, 1)
 }
 
+const _slots = useSlots()
+
 // ***** 注入组件数据 *****
 provide(treeInjectKey, {
-  slots: useSlots()
+  slots: _slots
+})
+
+provide(RootTreeKey, {
+  _emits: emits
 })
 
 // ***** Expose *****
-// 根据 key 获取原节点
-function getCurrentKeyRawNode(
+// 根据 key 获取节点
+function getCurrentKeyNode(
   key: Key,
   isRaw: boolean = true
 ): TreeNode | TreeOptions | undefined {
@@ -290,50 +297,61 @@ function getCurrentKeyRawNode(
   return isRaw ? curNode?.rawNode : curNode
 }
 
-// 暴露一个方法出去
+// 根据 key 获取原节点数据
+function getCurrentKeyRawNode(key: Key): TreeOptions | undefined {
+  return getCurrentKeyNode(key, true)
+}
+
 defineExpose({
-  flatenTree
+  flatenTree,
+  getCurrentKeyRawNode
 })
 </script>
 
 <template>
   <div :class="bem.b()">
-    <template v-if="!props.isVirtual">
-      <c-tree-node
-        v-for="node in flatenTree"
-        :style="{ height: `${props.nodeHeight}px` }"
-        :key="node.key"
-        :node="node"
-        :expanded="isExpanded(node)"
-        :loadingKeys="loadingKeysRef"
-        :selectedKeys="selectedKeysRef"
-        :show-checkbox="props.showCheckbox"
-        :indeterminate-keys="indeterminateKeysRef"
-        @select="handleSelect"
-        @toggleExpanded="toggleExpanded"
-      ></c-tree-node>
+    <template v-if="flatenTree && flatenTree.length">
+      <template v-if="!props.virtual">
+        <c-tree-node
+          v-for="node in flatenTree"
+          :style="{ height: `${props.nodeHeight}px` }"
+          :key="node.key"
+          :node="node"
+          :expanded="isExpanded(node)"
+          :loadingKeys="loadingKeysRef"
+          :selectedKeys="selectedKeysRef"
+          :show-checkbox="props.showCheckbox"
+          :indeterminate-keys="indeterminateKeysRef"
+          @select="handleSelect"
+          @toggleExpanded="toggleExpanded"
+        ></c-tree-node>
+      </template>
+      <template v-else>
+        <c-virtual
+          :data="flatenTree"
+          :itemHeight="props.nodeHeight"
+          :cache="props.cache || props.remain"
+          :remain="props.remain"
+        >
+          <template #default="{ node }">
+            <c-tree-node
+              :style="{ height: `${props.nodeHeight}px` }"
+              :key="node.key"
+              :node="node"
+              :expanded="isExpanded(node)"
+              :loadingKeys="loadingKeysRef"
+              :selectedKeys="selectedKeysRef"
+              :show-checkbox="props.showCheckbox"
+              :indeterminate-keys="indeterminateKeysRef"
+              @select="handleSelect"
+              @toggleExpanded="toggleExpanded"
+            ></c-tree-node>
+          </template>
+        </c-virtual>
+      </template>
     </template>
     <template v-else>
-      <c-virtual
-        :data="flatenTree"
-        :itemHeight="props.nodeHeight"
-        :cache="props.cache"
-      >
-        <template #default="{ node }">
-          <c-tree-node
-            :style="{ height: `${props.nodeHeight}px` }"
-            :key="node.key"
-            :node="node"
-            :expanded="isExpanded(node)"
-            :loadingKeys="loadingKeysRef"
-            :selectedKeys="selectedKeysRef"
-            :show-checkbox="props.showCheckbox"
-            :indeterminate-keys="indeterminateKeysRef"
-            @select="handleSelect"
-            @toggleExpanded="toggleExpanded"
-          ></c-tree-node>
-        </template>
-      </c-virtual>
+      <span :class="bem.e('empty')">{{ props.emptyText }}</span>
     </template>
   </div>
 </template>

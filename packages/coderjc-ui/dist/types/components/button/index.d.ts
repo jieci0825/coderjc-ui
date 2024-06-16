@@ -5,7 +5,7 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
             readonly default: "";
         };
         readonly size: {
-            readonly type: import('vue').PropType<import('./src/button.type').Size>;
+            readonly type: import('vue').PropType<import('./src/button.type').SizeType>;
         };
         readonly plain: {
             readonly type: BooleanConstructor;
@@ -52,7 +52,7 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
             readonly default: "";
         };
         readonly size: {
-            readonly type: import('vue').PropType<import('./src/button.type').Size>;
+            readonly type: import('vue').PropType<import('./src/button.type').SizeType>;
         };
         readonly plain: {
             readonly type: BooleanConstructor;
@@ -114,7 +114,7 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
             readonly default: "";
         };
         readonly size: {
-            readonly type: import('vue').PropType<import('./src/button.type').Size>;
+            readonly type: import('vue').PropType<import('./src/button.type').SizeType>;
         };
         readonly plain: {
             readonly type: BooleanConstructor;
@@ -173,7 +173,7 @@ export declare const CButton: import('../../utils').SFCWithInstall<{
         readonly default: "";
     };
     readonly size: {
-        readonly type: import('vue').PropType<import('./src/button.type').Size>;
+        readonly type: import('vue').PropType<import('./src/button.type').SizeType>;
     };
     readonly plain: {
         readonly type: BooleanConstructor;
@@ -238,7 +238,7 @@ export declare const CButtonGroup: import('../../utils').SFCWithInstall<{
             default: string;
         };
         size: {
-            type: import('vue').PropType<import('./src/button.type').Size>;
+            type: import('vue').PropType<import('./src/button.type').SizeType>;
             default: string;
         };
     }>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & Readonly<import('vue').ExtractPropTypes<{
@@ -247,11 +247,11 @@ export declare const CButtonGroup: import('../../utils').SFCWithInstall<{
             default: string;
         };
         size: {
-            type: import('vue').PropType<import('./src/button.type').Size>;
+            type: import('vue').PropType<import('./src/button.type').SizeType>;
             default: string;
         };
     }>>, {
-        size: import('./src/button.type').Size;
+        size: import('./src/button.type').SizeType;
         type: import('./src/button.type').Type;
     }, true, {}, {}, {
         P: {};
@@ -266,11 +266,11 @@ export declare const CButtonGroup: import('../../utils').SFCWithInstall<{
             default: string;
         };
         size: {
-            type: import('vue').PropType<import('./src/button.type').Size>;
+            type: import('vue').PropType<import('./src/button.type').SizeType>;
             default: string;
         };
     }>>, {}, {}, {}, {}, {
-        size: import('./src/button.type').Size;
+        size: import('./src/button.type').SizeType;
         type: import('./src/button.type').Type;
     }>;
     __isFragment?: undefined;
@@ -282,11 +282,11 @@ export declare const CButtonGroup: import('../../utils').SFCWithInstall<{
         default: string;
     };
     size: {
-        type: import('vue').PropType<import('./src/button.type').Size>;
+        type: import('vue').PropType<import('./src/button.type').SizeType>;
         default: string;
     };
 }>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, {
-    size: import('./src/button.type').Size;
+    size: import('./src/button.type').SizeType;
     type: import('./src/button.type').Type;
 }, {}, string, {}> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
     $slots: {

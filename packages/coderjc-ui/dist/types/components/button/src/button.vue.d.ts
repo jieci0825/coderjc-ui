@@ -1,10 +1,12 @@
+import { SizeType } from './button.type';
+
 declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
     readonly type: {
         readonly type: import('vue').PropType<import('./button.type').Type>;
         readonly default: "";
     };
     readonly size: {
-        readonly type: import('vue').PropType<import('./button.type').Size>;
+        readonly type: import('vue').PropType<SizeType>;
     };
     readonly plain: {
         readonly type: BooleanConstructor;
@@ -49,7 +51,7 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
         readonly default: "";
     };
     readonly size: {
-        readonly type: import('vue').PropType<import('./button.type').Size>;
+        readonly type: import('vue').PropType<SizeType>;
     };
     readonly plain: {
         readonly type: BooleanConstructor;

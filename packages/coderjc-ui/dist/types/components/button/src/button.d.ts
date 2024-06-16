@@ -1,5 +1,5 @@
 import { PropType, ExtractPropTypes, Component } from 'vue';
-import { NativeType, Placement, Size, Type } from './button.type';
+import { NativeType, Placement, SizeType, Type } from './button.type';
 
 export declare const buttonProps: {
     readonly type: {
@@ -7,7 +7,7 @@ export declare const buttonProps: {
         readonly default: "";
     };
     readonly size: {
-        readonly type: PropType<Size>;
+        readonly type: PropType<SizeType>;
     };
     readonly plain: {
         readonly type: BooleanConstructor;
