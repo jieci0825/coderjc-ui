@@ -44,11 +44,14 @@ export declare const treeProps: {
         readonly type: NumberConstructor;
         readonly default: 30;
     };
-    readonly isVirtual: {
+    readonly virtual: {
         readonly type: BooleanConstructor;
         readonly default: false;
     };
     readonly cache: {
+        readonly type: NumberConstructor;
+    };
+    readonly remain: {
         readonly type: NumberConstructor;
         readonly default: 8;
     };

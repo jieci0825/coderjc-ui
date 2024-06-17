@@ -35,8 +35,8 @@ declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<{
 }>>, {
     data: any[];
     cache: number;
-    itemHeight: number;
     remain: number;
+    itemHeight: number;
 }, {}>, {
     default?(_: {
         key: number;

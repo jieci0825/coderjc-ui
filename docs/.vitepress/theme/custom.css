@@ -60,20 +60,19 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 @font-face {
   font-family: "阿里妈妈东方大楷 Regular";
   font-weight: 400;
-  src: url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/fGcoStZCNQ3J.woff2") format("woff2"),
-    url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/gGIHiEydb27C.woff") format("woff");
+  src: url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/IgxpxOhyGh5K.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/CC72z8boCpRC.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: "阿里妈妈刀隶体 Regular";
   font-weight: 400;
-  src: url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/JQ5fYsl8egUD.woff2") format("woff2"),
-    url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/veSxxguCg4JX.woff") format("woff");
+  src: url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/4wha8hCBnWDd.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/QdJkIkEeNscy/F0QTsBayD0jn.woff") format("woff");
   font-display: swap;
 }
 
@@ -82,4 +81,18 @@ html {
   font-family: "阿里妈妈东方大楷 Regular";
   color: var(--vp-c-brand-1);
   font-size: 22px;
+}
+
+.container>.main .clip,
+.container>.main .text,
+.container>.main .tagline {
+  font-family: "阿里妈妈东方大楷 Regular";
+}
+
+.container .image .image-container .image-src {
+  width: 80%;
+}
+
+.VPContent .VPHome {
+  margin-bottom: 30px;
 }

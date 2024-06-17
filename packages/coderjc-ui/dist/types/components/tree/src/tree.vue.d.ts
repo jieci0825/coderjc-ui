@@ -1,6 +1,6 @@
 import { Key, TreeNode, TreeOptions } from './tree.type';
 
-declare function getCurrentKeyRawNode(key: Key, isRaw?: boolean): TreeNode | TreeOptions | undefined;
+declare function getCurrentKeyRawNode(key: Key): TreeOptions | undefined;
 declare const _default: import('vue').DefineComponent<{
     readonly data: {
         readonly type: import('vue').PropType<TreeOptions[]>;
@@ -44,11 +44,14 @@ declare const _default: import('vue').DefineComponent<{
         readonly type: NumberConstructor;
         readonly default: 30;
     };
-    readonly isVirtual: {
+    readonly virtual: {
         readonly type: BooleanConstructor;
         readonly default: false;
     };
     readonly cache: {
+        readonly type: NumberConstructor;
+    };
+    readonly remain: {
         readonly type: NumberConstructor;
         readonly default: 8;
     };
@@ -105,11 +108,14 @@ declare const _default: import('vue').DefineComponent<{
         readonly type: NumberConstructor;
         readonly default: 30;
     };
-    readonly isVirtual: {
+    readonly virtual: {
         readonly type: BooleanConstructor;
         readonly default: false;
     };
     readonly cache: {
+        readonly type: NumberConstructor;
+    };
+    readonly remain: {
         readonly type: NumberConstructor;
         readonly default: 8;
     };
@@ -130,8 +136,8 @@ declare const _default: import('vue').DefineComponent<{
     readonly defaultCheckedKeys: Key[];
     readonly selectedKeys: Key[];
     readonly nodeHeight: number;
-    readonly isVirtual: boolean;
-    readonly cache: number;
+    readonly virtual: boolean;
+    readonly remain: number;
     readonly showCheckbox: boolean;
 }, {}>;
 export default _default;

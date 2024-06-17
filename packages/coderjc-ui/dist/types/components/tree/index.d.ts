@@ -41,11 +41,14 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
         readonly type: NumberConstructor;
         readonly default: 30;
     };
-    readonly isVirtual: {
+    readonly virtual: {
         readonly type: BooleanConstructor;
         readonly default: false;
     };
     readonly cache: {
+        readonly type: NumberConstructor;
+    };
+    readonly remain: {
         readonly type: NumberConstructor;
         readonly default: 8;
     };
@@ -55,7 +58,7 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
     };
 }, {
     flatenTree: import('vue').ComputedRef<import('./src/tree.type').TreeNode[]>;
-    getCurrentKeyRawNode: (key: import('./src/tree.type').Key, isRaw?: boolean) => import('./src/tree.type').TreeOptions | import('./src/tree.type').TreeNode | undefined;
+    getCurrentKeyRawNode: (key: import('./src/tree.type').Key) => import('./src/tree.type').TreeOptions | undefined;
 }, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     "update:selectedKeys": (keys: import('./src/tree.type').Key[]) => void;
     "node-click": (node: import('./src/tree.type').TreeOptions, evt: MouseEvent) => void;
@@ -102,11 +105,14 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
         readonly type: NumberConstructor;
         readonly default: 30;
     };
-    readonly isVirtual: {
+    readonly virtual: {
         readonly type: BooleanConstructor;
         readonly default: false;
     };
     readonly cache: {
+        readonly type: NumberConstructor;
+    };
+    readonly remain: {
         readonly type: NumberConstructor;
         readonly default: 8;
     };
@@ -127,8 +133,8 @@ export declare const CTree: import('../../utils').SFCWithInstall<import('vue').D
     readonly defaultCheckedKeys: import('./src/tree.type').Key[];
     readonly selectedKeys: import('./src/tree.type').Key[];
     readonly nodeHeight: number;
-    readonly isVirtual: boolean;
-    readonly cache: number;
+    readonly virtual: boolean;
+    readonly remain: number;
     readonly showCheckbox: boolean;
 }, {}>>;
 export default CTree;

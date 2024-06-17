@@ -36,8 +36,8 @@ export declare const CVirtual: import('../../utils').SFCWithInstall<{
     }>>, {
         data: any[];
         cache: number;
-        itemHeight: number;
         remain: number;
+        itemHeight: number;
     }, true, {}, {}, {
         P: {};
         B: {};
@@ -65,8 +65,8 @@ export declare const CVirtual: import('../../utils').SFCWithInstall<{
     }>>, {}, {}, {}, {}, {
         data: any[];
         cache: number;
-        itemHeight: number;
         remain: number;
+        itemHeight: number;
     }>;
     __isFragment?: undefined;
     __isTeleport?: undefined;
@@ -91,8 +91,8 @@ export declare const CVirtual: import('../../utils').SFCWithInstall<{
 }>>, {}, unknown, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, {
     data: any[];
     cache: number;
-    itemHeight: number;
     remain: number;
+    itemHeight: number;
 }, {}, string, {}> & import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps & (new () => {
     $slots: {
         default?(_: {

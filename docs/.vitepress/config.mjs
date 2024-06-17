@@ -23,8 +23,8 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: {
-      light: 'http://cos.coderjc.cn/my-resource/icon/logo.1.svg',
-      dark: 'http://cos.coderjc.cn/my-resource/icon/icon.svg'
+      light: '/icon.1.svg',
+      dark: '/icon.svg'
     },
     lastUpdated: '最后更新时间',
     docsDir: 'docs',
@@ -36,8 +36,8 @@ export default defineConfig({
       level: 'deep'
     },
     footer: {
-      message: '大河之剑天上来',
-      copyright: '版权所有 coderjc - Jc-Disign-ui'
+      message: '了解真相才能获得真正的自由',
+      copyright: 'coderjc 版权所有 @2024-2050'
     },
     nav: [
       { text: '指南', link: '/guide/installation', activeMatch: '/guide/' },
@@ -51,7 +51,7 @@ export default defineConfig({
     sidebar,
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      // { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
 
     search: {
