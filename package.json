@@ -26,6 +26,7 @@
   "dependencies": {
     "@coderjc-ui/components": "workspace:*",
     "@coderjc-ui/constants": "workspace:*",
+    "@coderjc-ui/hooks": "workspace:^",
     "@coderjc-ui/theme-chalk": "workspace:*",
     "@coderjc-ui/utils": "workspace:*",
     "@eslint/js": "^9.4.0",

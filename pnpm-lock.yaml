@@ -14,6 +14,9 @@ importers:
       '@coderjc-ui/constants':
         specifier: workspace:*
         version: link:packages/constants
+      '@coderjc-ui/hooks':
+        specifier: workspace:^
+        version: link:packages/hooks
       '@coderjc-ui/theme-chalk':
         specifier: workspace:*
         version: link:packages/theme-chalk
@@ -237,6 +240,8 @@ importers:
   packages/components: {}
 
   packages/constants: {}
+
+  packages/hooks: {}
 
   packages/theme-chalk: {}
 
