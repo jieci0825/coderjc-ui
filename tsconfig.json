@@ -23,5 +23,10 @@
     "types": ["unplugin-vue-define-options/macros-global.d.ts"]
   },
   "exclude": ["node_modules", "**/__test__", "dist/**"], // 排除类库
-  "include": ["packages", "typings", "./global.d.ts"]
+  "include": [
+    "packages",
+    "typings/vue-shim.d.ts",
+    "typings/components.d.ts",
+    "./global.d.ts"
+  ]
 }
