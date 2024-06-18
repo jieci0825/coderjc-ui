@@ -53,6 +53,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/gulp": "^4.0.17",
     "@vue-macros/volar": "^0.21.1",
+    "@vue/babel-plugin-jsx": "^1.2.2",
     "esbuild": "^0.21.5",
     "gulp": "^5.0.0",
     "rollup": "^4.18.0",
