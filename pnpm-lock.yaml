@@ -196,6 +196,9 @@ importers:
       async-validator:
         specifier: ^4.2.5
         version: 4.2.5
+      coderjc-ui:
+        specifier: ^0.1.2
+        version: 'link:'
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
@@ -7117,7 +7120,7 @@ snapshots:
 
   send@0.1.4:
     dependencies:
-      debug: 0.8.1
+      debug: 4.3.5
       fresh: 0.2.0
       mime: 1.2.11
       range-parser: 0.0.4

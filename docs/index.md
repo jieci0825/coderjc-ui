@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /fast-start
+      link: /guide/installation
     - theme: alt
       text: 提出 Issue
       link: https://gitee.com/qwer-li/coderjc-ui/issues

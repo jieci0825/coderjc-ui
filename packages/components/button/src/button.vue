@@ -39,7 +39,8 @@ const buttonCls = computed(() => [
 ])
 
 const handleClick = (evt: MouseEvent) => {
-  if (props.disabled) return
+  // 被禁止时和加载中都无法点击
+  if (props.disabled || props.loading) return
   if (props.nativeType === 'reset') {
     // TODO: 表单中按钮类型为 reset 处理
     // form?.resetFields()
