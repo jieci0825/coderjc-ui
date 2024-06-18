@@ -2,7 +2,7 @@
 
 > 目前处于开发阶段，有任何问题或者建议都可以提出 Issue，感谢您的参与！
 
-具体说明请查看文档 [Coderjc UI](https://coderjc-ui.coderjc.cn/)
+具体说明请查看文档 <a href="https://coderjc-ui.coderjc.cn" target="_blank">Coderjc UI</a>
 
 ## 安装
 
