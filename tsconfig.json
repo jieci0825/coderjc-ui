@@ -20,7 +20,7 @@
     "paths": {
       "@coderjc-ui/*": ["packages/*"]
     },
-    "types": ["unplugin-vue-define-options/macros-global"]
+    "types": ["unplugin-vue-define-options/macros-global.d.ts"]
   },
   "exclude": ["node_modules", "**/__test__", "dist/**"], // 排除类库
   "include": ["packages", "typings", "./global.d.ts"]
