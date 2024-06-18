@@ -5,6 +5,10 @@
   "workspaces": [
     "packages/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jieci0825/coderjc-ui.git"
+  },
   "scripts": {
     "dev": "pnpm -C examples dev",
     "dev:docs": "pnpm -C docs dev",
