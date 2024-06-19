@@ -26,7 +26,8 @@ export default defineConfig({
         '@types/node',
         'vite-plugin-dts',
         'move-file-cli',
-        'npm-run-all'
+        'npm-run-all',
+        /\.(spec|test)\.(js|txs|ts)?$/
       ],
       output: {
         exports: 'named',
