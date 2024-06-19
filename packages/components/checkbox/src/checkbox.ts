@@ -1,5 +1,6 @@
-import { ExtractPropTypes, PropType } from 'vue'
-import type { SizeType, ValueType } from './checkbox.type'
+import { ExtractPropTypes, PropType} from 'vue'
+import type { SizeType } from './checkbox.type'
+
 
 export const checkboxProps = {
   /**

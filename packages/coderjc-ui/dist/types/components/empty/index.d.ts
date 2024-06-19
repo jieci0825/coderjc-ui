@@ -76,6 +76,7 @@ export declare const CEmpty: import('../../utils').SFCWithInstall<{
 })>;
 export default CEmpty;
 export * from './src/empty';
+
 declare module 'vue' {
     interface GlobalComponents {
         CEmpty: typeof CEmpty;

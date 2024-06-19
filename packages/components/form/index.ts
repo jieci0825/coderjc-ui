@@ -14,6 +14,7 @@ export * from './src/types'
 declare module 'vue' {
   export interface GlobalComponents {
     CForm: typeof CForm
+    CFormItem: typeof CFormItem
   }
 }
 

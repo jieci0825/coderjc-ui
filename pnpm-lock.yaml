@@ -51,7 +51,7 @@ importers:
         specifier: ^9.5.1
         version: 9.5.1(typescript@5.4.5)(webpack@5.92.0(esbuild@0.21.5))
       vue:
-        specifier: ^3.4.27
+        specifier: ^3.4.21
         version: 3.4.29(typescript@5.4.5)
       vue-loader:
         specifier: ^17.4.2
@@ -72,9 +72,6 @@ importers:
       '@types/node':
         specifier: ^20.14.5
         version: 20.14.5
-      '@types/vue':
-        specifier: ^2.0.0
-        version: 2.0.0(typescript@5.4.5)
       '@vitejs/plugin-vue':
         specifier: ^5.0.5
         version: 5.0.5(vite@5.3.1(@types/node@20.14.5)(less@4.2.0)(sass@1.77.6)(terser@5.31.1))(vue@3.4.29(typescript@5.4.5))
@@ -97,7 +94,7 @@ importers:
         specifier: ^6.1.1
         version: 6.1.1(esbuild@0.21.5)(rollup@4.18.0)
       typescript:
-        specifier: ^5.4.5
+        specifier: ^5.2.2
         version: 5.4.5
       unplugin-vue-define-options:
         specifier: ^1.4.5
@@ -970,10 +967,6 @@ packages:
   '@types/vinyl@2.0.12':
     resolution: {integrity: sha512-Sr2fYMBUVGYq8kj3UthXFAu5UN6ZW+rYr4NACjZQJvHvj+c8lYv0CahmZ2P/r7iUkN44gGUBwqxZkrKXYPb7cw==}
 
-  '@types/vue@2.0.0':
-    resolution: {integrity: sha512-WDElkBv/o4lVwu6wYHB06AXs4Xo2fwDjJUpvPRc1QQdzkUSiGFjrYuSCy8raxLE5FObgKq8ND7R5gSZTFLK60w==}
-    deprecated: This is a stub types definition for vuejs (https://github.com/vuejs/vue). vuejs provides its own type definitions, so you don't need @types/vue installed!
-
   '@types/web-bluetooth@0.0.20':
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
 
@@ -1665,8 +1658,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.4.805:
-    resolution: {integrity: sha512-8W4UJwX/w9T0QSzINJckTKG6CYpAUTqsaWcWIsdud3I1FYJcMgW9QqT1/4CBff/pP/TihWh13OmiyY8neto6vw==}
+  electron-to-chromium@1.4.806:
+    resolution: {integrity: sha512-nkoEX2QIB8kwCOtvtgwhXWy2IHVcOLQZu9Qo36uaGB835mdX/h8uLRlosL6QIhLVUnAiicXRW00PwaPZC74Nrg==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -4233,12 +4226,6 @@ snapshots:
       '@types/expect': 1.20.4
       '@types/node': 20.14.5
 
-  '@types/vue@2.0.0(typescript@5.4.5)':
-    dependencies:
-      vue: 3.4.29(typescript@5.4.5)
-    transitivePeerDependencies:
-      - typescript
-
   '@types/web-bluetooth@0.0.20': {}
 
   '@vicons/antd@0.12.0': {}
@@ -4838,7 +4825,7 @@ snapshots:
   browserslist@4.23.1:
     dependencies:
       caniuse-lite: 1.0.30001636
-      electron-to-chromium: 1.4.805
+      electron-to-chromium: 1.4.806
       node-releases: 2.0.14
       update-browserslist-db: 1.0.16(browserslist@4.23.1)
 
@@ -5079,7 +5066,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.4.805: {}
+  electron-to-chromium@1.4.806: {}
 
   emoji-regex@8.0.0: {}
 

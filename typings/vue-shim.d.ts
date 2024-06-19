@@ -1,9 +1,8 @@
-import type { vShow } from 'vue'
+import type {vShow} from 'vue';
 import type { INSTALLED_KEY } from '@coderjc-ui/constants'
 
 declare module '*.vue' {
   import { DefineComponent } from 'vue'
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
   const component: DefineComponent<{}, {}, any>
   export default component
 }
@@ -21,7 +20,5 @@ declare module '@vue/runtime-core' {
     vShow: typeof vShow
   }
 }
-
-// declare module 'vue'
 
 export {}

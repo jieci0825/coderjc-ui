@@ -18,13 +18,14 @@
     "skipLibCheck": true, // 跳过类库检测
     "baseUrl": "./",
     "paths": {
-      "@coderjc-ui/*": ["packages/*"]
+      "@coderjc-ui/*": ["packages/*"],
+      "vue": ["node_modules/vue"]
     },
-    "types": ["unplugin-vue-define-options/macros-global"]
+    "types": ["unplugin-vue-define-options/macros-global.d.ts"]
   },
   "exclude": ["node_modules", "**/__test__", "dist/**"], // 排除类库
   "include": [
-    "packages",
+    "packages/**/*.ts",
     "typings/vue-shim.d.ts",
     "typings/components.d.ts",
     "./global.d.ts"
