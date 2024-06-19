@@ -4,7 +4,7 @@ import CImgEmpty from './img-empty.vue'
 import { computed } from 'vue'
 import { emptyProps } from './empty'
 
-defineOptions({ name: 'c-empty' })
+defineOptions({ name: 'CEmpty' })
 
 const bem = createNamespace('empty')
 const props = defineProps(emptyProps)

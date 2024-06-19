@@ -7,10 +7,9 @@ import { buttonProps, buttonEmits } from './button'
 import { inject } from 'vue'
 import { ButtonGroupKey } from './constants'
 import { FormContextKey, FormItemContextKey } from '@coderjc-ui/components/form'
-import {ComponentSize} from "@coderjc-ui/constants";
+import { ComponentSize } from '@coderjc-ui/constants'
 
-
-defineOptions({ name: 'c-button' })
+defineOptions({ name: 'CButton' })
 
 const bem = createNamespace('button')
 const props = defineProps(buttonProps)

@@ -3,7 +3,7 @@ import { createNamespace } from '@coderjc-ui/utils'
 import { virtualProps } from './virtual'
 import { computed, onMounted, ref, watch } from 'vue'
 
-defineOptions({ name: 'c-virtual' })
+defineOptions({ name: 'CVirtual' })
 
 const props = defineProps(virtualProps)
 const bem = createNamespace('virtual')

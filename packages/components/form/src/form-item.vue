@@ -27,7 +27,7 @@ import {
 } from './types'
 import { clone } from 'lodash-unified'
 
-defineOptions({ name: 'c-form-item' })
+defineOptions({ name: 'CFormItem' })
 
 const bem = createNamespace('form-item')
 const props = defineProps(formItemProps)

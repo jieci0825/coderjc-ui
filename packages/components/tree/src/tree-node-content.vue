@@ -5,7 +5,7 @@ import { TreeNode } from './tree.type'
 import { createNamespace } from '@coderjc-ui/utils'
 
 export default {
-  name: 'c-tree-node-content',
+  name: 'CTreeNodeContent',
   props: {
     node: {
       type: Object as PropType<TreeNode>,

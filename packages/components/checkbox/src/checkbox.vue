@@ -6,7 +6,7 @@ import { provideCheckboxGroupKey } from './checkbox-group'
 import { FormContextKey, FormItemContextKey } from '@coderjc-ui/components/form'
 import { SizeType } from './checkbox.type'
 
-defineOptions({ name: 'c-checkbox' })
+defineOptions({ name: 'CCheckbox' })
 
 // 提取父组件注入的数据
 const checkboxGroupInject = inject(provideCheckboxGroupKey, undefined)

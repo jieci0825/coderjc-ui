@@ -7,8 +7,8 @@ import CTreeNode from './tree-node.vue'
 import CVirtual from '@coderjc-ui/components/virtual'
 import { RootTreeKey } from './constans'
 
+defineOptions({ name: 'CTree' })
 const bem = createNamespace('tree')
-defineOptions({ name: 'c-tree' })
 
 const props = defineProps(treeProps)
 const emits = defineEmits(treeEmits)

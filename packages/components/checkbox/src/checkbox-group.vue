@@ -7,7 +7,7 @@ import {
 } from './checkbox-group'
 import { computed, getCurrentInstance, onMounted, provide, ref } from 'vue'
 
-defineOptions({ name: 'c-checkbox-group' })
+defineOptions({ name: 'CCheckboxGroup' })
 
 const bem = createNamespace('checkbox-group')
 const props = defineProps(checkboxGroupProps)

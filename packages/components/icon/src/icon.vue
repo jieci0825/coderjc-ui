@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { createNamespace } from '@coderjc-ui/utils'
 import { iconEmits, iconProps } from './icon'
 
-defineOptions({ name: 'c-icon' })
+defineOptions({ name: 'CIcon' })
 
 const bem = createNamespace('icon')
 const props = defineProps(iconProps)

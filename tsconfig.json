@@ -14,18 +14,17 @@
     "experimentalDecorators": true, // 启用装饰器
     "forceConsistentCasingInFileNames": true, // 强制区分大小写
     "resolveJsonModule": true, // 允许导入扩展名为.json的模块
-    "strict": true, // 启用严格模式
+    "strict": false, // 是否启用严格模式
     "skipLibCheck": true, // 跳过类库检测
     "baseUrl": "./",
     "paths": {
       "@coderjc-ui/*": ["packages/*"],
       "vue": ["node_modules/vue"]
-    },
-    "types": ["unplugin-vue-define-options/macros-global.d.ts"]
+    }
   },
   "exclude": ["node_modules", "**/__test__", "dist/**"], // 排除类库
   "include": [
-    "packages/**/*.ts",
+    "packages",
     "typings/vue-shim.d.ts",
     "typings/components.d.ts",
     "./global.d.ts"

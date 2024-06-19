@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { createNamespace } from '@coderjc-ui/utils'
 
-defineOptions({ name: 'c-img-empty' })
+defineOptions({ name: 'CImgEmpty' })
 
 const bem = createNamespace('img-empty')
 </script>

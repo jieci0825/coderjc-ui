@@ -8,7 +8,7 @@ import { treeNodeEmits, treeNodeProps } from './tree'
 import CTreeNodeContent from './tree-node-content.vue'
 import { RootTreeKey } from './constans'
 
-defineOptions({ name: 'c-tree-node' })
+defineOptions({ name: 'CTreeNode' })
 const bem = createNamespace('tree-node')
 const props = defineProps(treeNodeProps)
 const emits = defineEmits(treeNodeEmits)

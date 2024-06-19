@@ -4,7 +4,7 @@ import { buttonGroupProps } from './button-group'
 import { provide, reactive, toRefs } from 'vue'
 import { ButtonGroupKey } from './constants'
 
-defineOptions({ name: 'c-button-group' })
+defineOptions({ name: 'CButtonGroup' })
 
 const bem = createNamespace('button-group')
 const props = defineProps(buttonGroupProps)

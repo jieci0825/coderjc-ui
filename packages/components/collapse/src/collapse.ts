@@ -1,5 +1,5 @@
 import { ExtractPropTypes, PropType } from 'vue'
-import { ValueType } from '@coderjc-ui/components/checkbox/src/checkbox.type'
+import { ValueType } from './collapse.type'
 
 export const collapseProps = {
   /**
@@ -7,11 +7,20 @@ export const collapseProps = {
    */
   modelValue: {
     type: [String, Array] as PropType<string | string[]>
+  },
+
+  /**
+   * @descript 手风琴模式
+   */
+  accordion: {
+    type: Boolean,
+    default: false
   }
 }
 
 export const collapseEmits = {
-  'update:modelValue': (value: ValueType) => true
+  'update:modelValue': (value: ValueType) => true,
+  change: (activeNames: ValueType) => true
 }
 
 export type CollapseProps = ExtractPropTypes<typeof collapseProps>

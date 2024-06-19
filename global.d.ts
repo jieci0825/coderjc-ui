@@ -1,3 +1,5 @@
+export * from '@vue-macros/volar'
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     // 这里可以添加全局组件

@@ -24,7 +24,7 @@ import { SizeType } from './input.type'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 
-defineOptions({ name: 'c-input', inheritAttrs: false })
+defineOptions({ name: 'CInput', inheritAttrs: false })
 
 const bem = createNamespace('input')
 const bemTextarea = createNamespace('textarea')

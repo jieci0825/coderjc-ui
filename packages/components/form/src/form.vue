@@ -11,7 +11,7 @@ import {
 import { filterFields } from './utils'
 import { ValidateFieldsError } from 'async-validator'
 
-defineOptions({ name: 'c-form' })
+defineOptions({ name: 'CForm' })
 
 const bem = createNamespace('form')
 const props = defineProps(formProps)
