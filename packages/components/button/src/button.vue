@@ -7,7 +7,8 @@ import { buttonProps, buttonEmits } from './button'
 import { inject } from 'vue'
 import { ButtonGroupKey } from './constants'
 import { FormContextKey, FormItemContextKey } from '@coderjc-ui/components/form'
-import { SizeType } from './button.type'
+import {ComponentSize} from "@coderjc-ui/constants";
+
 
 defineOptions({ name: 'c-button' })
 
@@ -21,7 +22,7 @@ const formItemContextInject = inject(FormItemContextKey, undefined)
 
 const sizeValue = computed(() => {
   // 优先级：props > formItemContextInject > formContextInject
-  let size: SizeType = (props.size ||
+  let size: ComponentSize = (props.size ||
     formItemContextInject?.size ||
     formContextInject?.size)!
   return size

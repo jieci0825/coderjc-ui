@@ -1,5 +1,6 @@
 import { PropType, ExtractPropTypes } from 'vue'
-import { SizeType, Type } from './button.type'
+import { Type } from './button.type'
+import {ComponentSize} from "@coderjc-ui/constants";
 
 export const buttonGroupProps = {
   /**
@@ -14,7 +15,7 @@ export const buttonGroupProps = {
    * @description 尺寸
    */
   size: {
-    type: String as PropType<SizeType>,
+    type: String as PropType<ComponentSize>,
     default: 'default'
   }
 }

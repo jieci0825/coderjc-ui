@@ -1,5 +1,6 @@
 import { PropType, ExtractPropTypes, Component } from 'vue'
-import { NativeType, Placement, SizeType, Type } from './button.type'
+import { NativeType, Placement, Type } from './button.type'
+import {ComponentSize} from "@coderjc-ui/constants";
 
 export const buttonProps = {
   /**
@@ -14,7 +15,7 @@ export const buttonProps = {
    * @description 尺寸
    */
   size: {
-    type: String as PropType<SizeType>
+    type: String as PropType<ComponentSize>
   },
 
   /**
