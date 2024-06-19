@@ -32,12 +32,9 @@ function _setPrototypeOf(o, p) {
   return _setPrototypeOf(o, p);
 }
 function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct)
-    return false;
-  if (Reflect.construct.sham)
-    return false;
-  if (typeof Proxy === "function")
-    return true;
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
   try {
     Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
@@ -55,8 +52,7 @@ function _construct(Parent, args, Class) {
       a.push.apply(a, args2);
       var Constructor = Function.bind.apply(Parent2, a);
       var instance = new Constructor();
-      if (Class2)
-        _setPrototypeOf(instance, Class2.prototype);
+      if (Class2) _setPrototypeOf(instance, Class2.prototype);
       return instance;
     };
   }
@@ -68,14 +64,12 @@ function _isNativeFunction(fn) {
 function _wrapNativeSuper(Class) {
   var _cache = typeof Map === "function" ? /* @__PURE__ */ new Map() : void 0;
   _wrapNativeSuper = function _wrapNativeSuper2(Class2) {
-    if (Class2 === null || !_isNativeFunction(Class2))
-      return Class2;
+    if (Class2 === null || !_isNativeFunction(Class2)) return Class2;
     if (typeof Class2 !== "function") {
       throw new TypeError("Super expression must either be null or a function");
     }
     if (typeof _cache !== "undefined") {
-      if (_cache.has(Class2))
-        return _cache.get(Class2);
+      if (_cache.has(Class2)) return _cache.get(Class2);
       _cache.set(Class2, Wrapper);
     }
     function Wrapper() {
@@ -108,8 +102,7 @@ if (typeof process !== "undefined" && process.env && true && typeof window !== "
   };
 }
 function convertFieldsError(errors) {
-  if (!errors || !errors.length)
-    return null;
+  if (!errors || !errors.length) return null;
   var fields = {};
   errors.forEach(function(error) {
     var field = error.field;
