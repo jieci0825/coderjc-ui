@@ -5,7 +5,7 @@ export const CTree = withInstall(Tree)
 export default CTree
 
 export * from './src/tree'
-export * from './src/constans'
+export * from './src/constants'
 export * from './src/tree.type'
 
 declare module 'vue' {

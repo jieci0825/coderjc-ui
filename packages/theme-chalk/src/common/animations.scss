@@ -1,28 +1,32 @@
-@keyframes zoomInTop {
-  0% {
-    transform: scale(0) translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
+@use '../mixins/mixins.scss' as *;
+@use '../mixins/function.scss' as *;
+
+.#{$namespace}-fade-enter-from,
+.#{$namespace}-fade-leave-to {
+  opacity: 0;
 }
 
-/* 应用动画 */
-.c-zoom-in-top-enter-active,
-.c-zoom-in-top-leave-active {
-  animation-duration: 0.25s;
-  animation-fill-mode: forwards;
+.#{$namespace}-fade-enter-to,
+.#{$namespace}-fade-leave-from {
+  opacity: 1;
 }
 
-.c-zoom-in-top-enter {
-  animation-name: zoomInTop;
-  animation-timing-function: ease-out;
+.#{$namespace}-fade-enter-active,
+.#{$namespace}-leave-active {
+  transition: opacity 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.c-zoom-in-top-leave {
-  animation-name: zoomInTop;
-  animation-timing-function: ease-in;
-  animation-direction: reverse;
+.collapse-transition {
+  transition: height getCssVar('transition-duration') ease-in-out,
+    padding-top getCssVar('transition-duration') ease-in-out,
+    padding-bottom getCssVar('transition-duration') ease-in-out;
+}
+
+.#{$namespace}-collapse-transition-leave-active,
+.#{$namespace}-collapse-transition-enter-active {
+  // 为 padding 也设置过渡效果，防止只有高度存在过渡效果，padding 没有产生卡顿
+  transition: height getCssVar('transition-duration') ease-in-out,
+    max-height getCssVar('transition-duration') ease-in-out,
+    padding-top getCssVar('transition-duration') ease-in-out,
+    padding-bottom getCssVar('transition-duration') ease-in-out;
 }

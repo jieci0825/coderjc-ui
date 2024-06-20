@@ -21,6 +21,11 @@
 
   // transition
   @include set-other-css-var(
+    getOtherCssVar('transition', 'timing'),
+    cubic-bezier(0.645, 0.045, 0.355, 1)
+  );
+  @include set-other-css-var(getOtherCssVar('transition', 'duration'), 0.3s);
+  @include set-other-css-var(
     getOtherCssVar('transition', 'base'),
     all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
   );

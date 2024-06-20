@@ -1,1 +1,3 @@
-export type ValueType = Array<string | number> | string | number
+export type NameType = string | number
+
+export type ValueType = Array<NameType> | NameType

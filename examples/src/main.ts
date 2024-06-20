@@ -17,7 +17,9 @@ import {
   CEmpty,
   CInput,
   CForm,
-  CFormItem
+  CFormItem,
+  CCollapse,
+  CCollapseItem
 } from '@coderjc-ui/components'
 import '@coderjc-ui/theme-chalk/src/index.scss'
 
@@ -32,7 +34,9 @@ const components = [
   CEmpty,
   CInput,
   CForm,
-  CFormItem
+  CFormItem,
+  CCollapse,
+  CCollapseItem
 ]
 
 const app = createApp(App)

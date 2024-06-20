@@ -6,7 +6,7 @@ import { CIcon, CCheckbox } from '@coderjc-ui/components'
 import { createNamespace } from '@coderjc-ui/utils'
 import { treeNodeEmits, treeNodeProps } from './tree'
 import CTreeNodeContent from './tree-node-content.vue'
-import { RootTreeKey } from './constans'
+import { RootTreeKey } from './constants'
 
 defineOptions({ name: 'CTreeNode' })
 const bem = createNamespace('tree-node')

@@ -5,7 +5,7 @@ import { Key, TreeNode, TreeOptions } from './tree.type'
 import { createNamespace } from '@coderjc-ui/utils'
 import CTreeNode from './tree-node.vue'
 import CVirtual from '@coderjc-ui/components/virtual'
-import { RootTreeKey } from './constans'
+import { RootTreeKey } from './constants'
 
 defineOptions({ name: 'CTree' })
 const bem = createNamespace('tree')

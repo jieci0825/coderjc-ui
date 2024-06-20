@@ -7,8 +7,9 @@ export default CCollapse
 
 export const CCollapseItem = withInstall(CollapseItem)
 
-export * from './src/collapse.vue'
 export * from './src/collapse'
+export * from './src/collapse-item'
+export * from './src/collapse.type'
 
 declare module 'vue' {
   export interface GlobalComponents {
