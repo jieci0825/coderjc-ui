@@ -21,14 +21,14 @@ export default {
       items: [
         { text: 'Checkbox 多选框', link: '/component/form/checkbox' },
         { text: 'Form 表单', link: '/component/form/form' },
-        { text: 'Input 多选框', link: '/component/form/input' }
+        { text: 'Input 输入框', link: '/component/form/input' }
       ]
     },
     {
       text: 'Data 数据展示',
       items: [
         { text: 'Tree 树形控件', link: '/component/data/tree' },
-        { text: 'Collapse 树形控件', link: '/component/data/collapse' }
+        { text: 'Collapse 折叠面板', link: '/component/data/collapse' }
       ]
     }
   ]

@@ -15,7 +15,7 @@ hero:
       link: /guide/installation
     - theme: alt
       text: 提出 Issue
-      link: https://gitee.com/qwer-li/coderjc-ui/issues
+      link: https://github.com/jieci0825/coderjc-ui/issues
 features:
   - title: 好玩的 HTML + CSS + JavaScript 👻
     details: 简单的代码，也可以有不简单的效果，如果你是一个刚刚起步的前端学习者，那么这个案例会给你一些兴趣

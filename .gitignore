@@ -4,6 +4,10 @@ dist
 dist/
 dist/**
 
+/docs/.vitepress/dist
+/docs/.vitepress/cache
+/docs/.vitepress/.temp
+
 # local env files
 .env.local
 .env.*.local
