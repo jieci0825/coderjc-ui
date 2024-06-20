@@ -26,7 +26,10 @@ export default {
     },
     {
       text: 'Data 数据展示',
-      items: [{ text: 'Tree 树形控件', link: '/component/data/tree' }]
+      items: [
+        { text: 'Tree 树形控件', link: '/component/data/tree' },
+        { text: 'Collapse 树形控件', link: '/component/data/collapse' }
+      ]
     }
   ]
 }

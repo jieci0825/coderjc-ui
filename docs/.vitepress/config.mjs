@@ -51,7 +51,7 @@ export default defineConfig({
     sidebar,
 
     socialLinks: [
-      // { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/jieci0825/coderjc-ui' }
     ],
 
     search: {
