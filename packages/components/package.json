@@ -2,7 +2,7 @@
   "name": "@coderjc-ui/components",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {},
   "keywords": [],
   "author": "",
