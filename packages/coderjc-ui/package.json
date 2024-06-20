@@ -9,6 +9,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jieci0825/coderjc-ui"
+  },
   "keywords": [
     "jc-ui",
     "coderjc",
