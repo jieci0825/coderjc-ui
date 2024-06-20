@@ -8,7 +8,7 @@ export const treeProps = {
    */
   data: {
     type: Array as PropType<TreeOptions[]>,
-    default: () => []
+    default: () => [] as TreeOptions[]
   },
 
   /**
@@ -47,7 +47,7 @@ export const treeProps = {
    */
   defaultExpandedKeys: {
     type: Array as PropType<Key[]>,
-    default: () => []
+    default: () => [] as Key[]
   },
 
   /**
@@ -63,7 +63,7 @@ export const treeProps = {
    */
   defaultCheckedKeys: {
     type: Array as PropType<Key[]>,
-    default: () => []
+    default: () => [] as Key[]
   },
 
   /**
@@ -71,7 +71,7 @@ export const treeProps = {
    */
   selectedKeys: {
     type: Array as PropType<Key[]>,
-    default: () => []
+    default: () => [] as Key[]
   },
 
   /**
@@ -161,7 +161,7 @@ export const treeNodeProps = {
    */
   selectedKeys: {
     type: Array as PropType<Key[]>,
-    default: () => []
+    default: () => [] as Key[]
   },
 
   /**

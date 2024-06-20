@@ -30,7 +30,7 @@ export const virtualProps = {
    */
   data: {
     type: Array as PropType<Array<any>>,
-    default: []
+    default: () => [] as any[]
   }
 }
 
