@@ -52,7 +52,8 @@ export const messageProps = {
    * @description Message 距离窗口顶部的偏移量
    */
   offset: {
-    type: Number
+    type: Number,
+    default: 20
   },
 
   /**

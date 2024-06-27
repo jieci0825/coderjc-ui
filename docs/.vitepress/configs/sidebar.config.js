@@ -30,6 +30,10 @@ export default {
         { text: 'Tree 树形控件', link: '/component/data/tree' },
         { text: 'Collapse 折叠面板', link: '/component/data/collapse' }
       ]
+    },
+    {
+      text: 'Feedback 反馈组件',
+      items: [{ text: 'Message 消息提示', link: '/component/feedback/message' }]
     }
   ]
 }
