@@ -9,12 +9,15 @@
 // warning: #ee5514,
 // success: #0d9838,
 
+$types: primary, success, warning, danger, error, info;
+
 // 主题色
 $colors: (
   primary: #009688,
   success: #0aaf3c,
   warning: #ff8809,
   danger: #ef4751,
+  error: #ef4751,
   info: #b2b4b3
 ) !default;
 

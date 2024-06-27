@@ -9,3 +9,6 @@ export * from './input'
 export * from './form'
 export * from './collapse'
 export * from './collapse-transition'
+
+// plugins
+export * from './message'

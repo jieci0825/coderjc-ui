@@ -72,6 +72,9 @@ importers:
       '@types/node':
         specifier: ^20.14.5
         version: 20.14.5
+      '@vicons/carbon':
+        specifier: ^0.12.0
+        version: 0.12.0
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
         version: 5.0.5(vite@5.3.1(@types/node@20.14.5)(less@4.2.0)(sass@1.77.6)(terser@5.31.1))(vue@3.4.29(typescript@5.4.5))
@@ -1016,6 +1019,9 @@ packages:
 
   '@vicons/antd@0.12.0':
     resolution: {integrity: sha512-C0p6aO1EmGG1QHrqgUWQS1No20934OdWSRQshM5NIDK5H1On6tC26U0hT6Rmp40KfUsvhvX5YW8BoWJdNFifPg==}
+
+  '@vicons/carbon@0.12.0':
+    resolution: {integrity: sha512-kCOgr/ZOhZzoiFLJ8pwxMa2TMxrkCUOA22qExPabus35F4+USqzcsxaPoYtqRd9ROOYiHrSqwapak/ywF0D9bg==}
 
   '@vicons/fluent@0.12.0':
     resolution: {integrity: sha512-ATCiqPuiJ6RI5GBlD3BIpZ9Xw4MsCA4RpI5oR6MCti4quS4mX1Gp6N74FCzw7lgOj+80rV4HMKhZTVInwimpVQ==}
@@ -4326,6 +4332,8 @@ snapshots:
   '@types/web-bluetooth@0.0.20': {}
 
   '@vicons/antd@0.12.0': {}
+
+  '@vicons/carbon@0.12.0': {}
 
   '@vicons/fluent@0.12.0': {}
 

@@ -1,0 +1,66 @@
+@use './mixins/mixins.scss' as *;
+@use './mixins/function.scss' as *;
+@use './mixins/_var.scss' as *;
+
+@include b(message) {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  padding: 11px 15px;
+  border-radius: getCssVar('border-radius-base');
+  border: getCssVar('border-base');
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  gap: 8px;
+  transition: top getCssVar('transition', 'duration')
+      getCssVar('transition', 'timing'),
+    opacity getCssVar('transition', 'duration')
+      getCssVar('transition', 'timing'),
+    transform getCssVar('transition', 'duration')
+      getCssVar('transition', 'timing');
+
+  &-fade-enter-from,
+  &-fade-leave-to {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+
+  @include e(content) {
+    font-size: getCssVar('font', 'size', 'base');
+    line-height: 1;
+  }
+
+  @include e(closeBtn) {
+    cursor: pointer;
+  }
+
+  @each $type in (success, info, warning, error) {
+    @include m($type) {
+      @include set-other-css-var(
+        ('background-color'),
+        getCssVar('color', $type, 'light-9')
+      );
+      @include set-other-css-var(
+        ('border-color'),
+        getCssVar('color', $type, 'light-8')
+      );
+      @include set-other-css-var(('text-color'), getCssVar('color', $type));
+
+      .#{$namespace}-message__content {
+        color: getCssVar('color', $type);
+        overflow-wrap: break-word;
+      }
+
+      .#{$namespace}-message__closeBtn {
+        color: getCssVar('color', $type);
+      }
+    }
+
+    & .#{$namespace}-message__icon--#{$type} {
+      color: getCssVar('color', $type);
+    }
+  }
+}

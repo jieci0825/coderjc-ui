@@ -19,7 +19,8 @@ import {
   CForm,
   CFormItem,
   CCollapse,
-  CCollapseItem
+  CCollapseItem,
+  CMessage
 } from '@coderjc-ui/components'
 import '@coderjc-ui/theme-chalk/src/index.scss'
 
@@ -39,6 +40,9 @@ const components = [
   CCollapseItem
 ]
 
+const plugins = [CMessage]
+
 const app = createApp(App)
 components.forEach(comp => app.component(comp.name, comp))
+plugins.forEach(plugin => app.use(plugin))
 app.mount('#app')
