@@ -45,7 +45,7 @@ export const messageProps = {
    * @description 点击关闭按钮时触发
    */
   onClose: {
-    type: Function as PropType<() => void>
+    type: Function as PropType<(e: HTMLDivElement) => void>
   },
 
   /**
@@ -59,8 +59,7 @@ export const messageProps = {
    * @description 设置 Message 的根元素。默认为 documen.body
    */
   appendTo: {
-    type: [String, Object] as PropType<string | HTMLElement>,
-    default: 'body'
+    type: [String, Object] as PropType<string | HTMLElement>
   },
 
   /**
@@ -85,9 +84,9 @@ export const messageProps = {
 } as const
 
 export const messageEmits = {
-  close: (e: MouseEvent) => e instanceof MouseEvent
+  close: () => true
 }
 
-export type MessageProps = Partial<ExtractPropTypes<typeof messageProps>>
+export type MessageProps = ExtractPropTypes<typeof messageProps>
 
 export type MessageEmits = typeof messageEmits

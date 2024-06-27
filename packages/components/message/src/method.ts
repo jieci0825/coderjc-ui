@@ -2,7 +2,7 @@ import { render, h, shallowReactive, isVNode } from 'vue'
 import MessageContainer from './message.vue'
 import type { Message, MessageContext, MessageOptions } from './message.type'
 import { useZIndex } from '@coderjc-ui/hooks'
-import { isFunction } from '@coderjc-ui/utils'
+import { isFunction, isString } from '@coderjc-ui/utils'
 
 let seed = 1
 
@@ -41,7 +41,7 @@ const createMessage = (options: MessageOptions) => {
     curInstance.vnode.component.exposed.visible.value = false
   }
 
-  const props = {
+  const props: any = {
     ...options,
     id,
     zIndex: useZIndex().nextZIndex(),
@@ -61,7 +61,18 @@ const createMessage = (options: MessageOptions) => {
   // 渲染挂载
   render(vnode, container)
   // 只加入第一个子元素，避免这个多余的 div 容器插入
-  document.body.appendChild(container.firstElementChild!)
+  if (props.appendTo) {
+    if (isString(props.appendTo)) {
+      const wrapper = document.querySelector(props.appendTo as string)
+      if (wrapper) {
+        wrapper.appendChild(container.firstElementChild!)
+      }
+    } else {
+      ;(props.appendTo as HTMLElement).appendChild(container.firstElementChild!)
+    }
+  } else {
+    document.body.appendChild(container.firstElementChild!)
+  }
 
   const instance: MessageContext = {
     id,

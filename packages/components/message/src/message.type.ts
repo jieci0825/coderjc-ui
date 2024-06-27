@@ -1,4 +1,4 @@
-import type { AppContext, VNode } from 'vue'
+import type { AppContext, Component, VNode } from 'vue'
 import { MessageProps } from './message'
 
 export type MessageType = 'success' | 'warning' | 'info' | 'error'
@@ -7,9 +7,17 @@ export interface MessageHandler {
   close: () => void
 }
 
-export type MessageOptions = Partial<
-  Omit<MessageProps, 'onDestroy' | 'id' | 'zIndex'>
->
+export type MessageOptions = {
+  message: string | VNode
+  type?: MessageType
+  duration?: number
+  showClose?: boolean
+  icon?: Component
+  onClose?: (e: HTMLDivElement) => void
+  offset?: number
+  appendTo?: string | HTMLElement
+  isHTML?: boolean
+}
 
 export type MessageFn = {
   (options?: MessageOptions, appContext?: null | AppContext): MessageHandler

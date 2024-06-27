@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
-import { TypeComponentsMap, createNamespace } from '@coderjc-ui/utils'
+import {
+  TypeComponentsMap,
+  createNamespace,
+  isFunction
+} from '@coderjc-ui/utils'
 import { messageEmits, messageProps } from './message'
 import { getLastBottomOffset } from './method'
 import { CIcon } from '@coderjc-ui/components'
@@ -69,6 +73,9 @@ function clearTimer() {
 function close() {
   clearTimer()
   visible.value = false
+  if (isFunction(props.onClose)) {
+    props.onClose(messageRef.value!)
+  }
 }
 
 onMounted(() => {
@@ -116,6 +123,7 @@ defineExpose({
         <p v-else :class="bem.e('content')">{{ props.message }}</p>
       </slot>
       <c-icon
+        v-if="props.showClose"
         :class="[bem.e('closeBtn')]"
         :icon="CloseOutline"
         @click="close"
